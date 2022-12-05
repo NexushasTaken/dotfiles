@@ -1,0 +1,32 @@
+
+2022/09/08 (12:13:47) | ===> btop++ v.1.2.9
+2022/09/08 (12:13:47) | INFO: Logger set to DEBUG
+2022/09/08 (12:13:47) | DEBUG: Using locale C.UTF-8
+2022/09/08 (12:13:47) | INFO: Running on /dev/pts/0
+2022/09/08 (12:13:47) | DEBUG: Loading theme file: /usr/local/share/btop/themes/tokyo-night.theme
+2022/09/08 (12:13:49) | WARNING: Failed to join _runner thread on exit!
+2022/09/08 (12:13:49) | DEBUG: Writing new config file
+2022/09/08 (12:13:49) | INFO: Quitting! Runtime: 00:00:02
+
+2022/09/08 (12:21:19) | ===> btop++ v.1.2.9
+2022/09/08 (12:21:19) | INFO: Logger set to DEBUG
+2022/09/08 (12:21:19) | DEBUG: Using locale C.UTF-8
+2022/09/08 (12:21:19) | INFO: Running on /dev/pts/0
+2022/09/08 (12:21:19) | DEBUG: Loading theme file: /snap/share/btop/themes/tokyo-night.theme
+2022/09/08 (12:21:20) | INFO: Quitting! Runtime: 00:00:01
+
+2022/09/08 (12:22:08) | ===> btop++ v.1.2.9
+2022/09/08 (12:22:08) | INFO: Logger set to DEBUG
+2022/09/08 (12:22:08) | DEBUG: Using locale C.UTF-8
+2022/09/08 (12:22:08) | INFO: Running on /dev/pts/0
+2022/09/08 (12:22:08) | DEBUG: Loading theme file: /snap/share/btop/themes/tokyo-night.theme
+2022/09/08 (12:22:09) | WARNING: Failed to join _runner thread on exit!
+2022/09/08 (12:22:09) | INFO: Quitting! Runtime: 00:00:01
+
+2022/09/08 (12:22:17) | ===> btop++ v.1.2.9
+2022/09/08 (12:22:17) | INFO: Logger set to DEBUG
+2022/09/08 (12:22:17) | DEBUG: Using locale C.UTF-8
+2022/09/08 (12:22:17) | INFO: Running on /dev/pts/0
+2022/09/08 (12:22:17) | DEBUG: Loading theme file: /snap/share/btop/themes/tokyo-night.theme
+2022/09/08 (12:22:48) | INFO: Logger set to INFO
+2022/09/08 (12:22:49) | INFO: Logger set to DEBUG

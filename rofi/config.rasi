@@ -1,0 +1,14 @@
+configuration {
+	modi: "window,windowcd,run,ssh,drun,combi,keys,calc";
+	width: 50;
+	lines: 20;
+	columns: 1;
+	font: "Hack Nerd Font 11";
+	padding: 0;
+	show-icons: false;
+	terminal: "rofi-sensible-terminal";
+	sort: true;
+	sidebar-mode: true;
+	theme: "Arc-Dark";
+	max-history-size: 25;
+}

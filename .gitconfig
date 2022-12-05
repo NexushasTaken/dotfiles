@@ -1,0 +1,7 @@
+[user]
+  name="NexushasTaken"
+  email="nexushastaken@gmail.com"
+[core]
+  editor=nvim
+[init]
+	defaultBranch = master
