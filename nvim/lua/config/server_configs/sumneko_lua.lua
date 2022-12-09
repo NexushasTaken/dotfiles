@@ -10,7 +10,7 @@ local root_files = {
   'selene.yml',
 }
 
-local bin_name = vim.loop.os_homedir() .. '/Libraries/lua-language-server-3.6.3-linux-x64/bin/lua-language-server'
+local bin_name = 'lua-language-server'
 local cmd = { bin_name }
 
 if vim.fn.has 'win32' == 1 then

@@ -13,4 +13,5 @@ xset r rate 500 30 # Change Keyrepeat
 
 slstatus &
 firefox &
-exec dwm
+#exec dwm
+exec i3

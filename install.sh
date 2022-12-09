@@ -10,7 +10,9 @@ ln -sf $DOT/nvim/ ~/.config/
 ln -sf $DOT/rofi/ ~/.config/
 ln -sf $DOT/rustfmt/ ~/.config/
 ln -sf $DOT/tmux/ ~/.config/
+ln -sf $DOT/i3/ ~/.config/
 
+ln -sf $DOT/.vim ~/.vim
 ln -sf $DOT/.xinitrc ~/.xsessionrc
 ln -sf $DOT/.xinitrc ~/.xinitrc
 ln -sf $DOT/.gitconfig ~/.gitconfig
@@ -19,9 +21,7 @@ ln -sf $DOT/.omnisharp ~/.omnisharp
 ln -sf $DOT/bash/bashrc.sh ~/.bashrc
 ln -sf $DOT/bash/bashrc.sh ~/.profile
 
-FONTS_DIR=/usr/share/fonts/TTF
-mkdir -p $FONTS_DIR
-sudo cp $DOT/fonts/* $FONTS_DIR
+sudo pacman -S ttf-hack-nerd
 
 # Tmux
 TMUX_RESURRECT=$DOT/tmux/plugins/tmux-resurrect

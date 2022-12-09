@@ -17,6 +17,7 @@
   
   alias vi='nvim'
   alias vif='nvim $(fzf)'
+  alias vig='nvim --listen godothost .'
 
   alias cd='cd -P'
   
@@ -35,11 +36,12 @@
 
   addPath "~/Libraries/lua-language-server/bin"
   addPath "~/Libraries/jdtls/bin"
-  addPath "${JAVA_HOME}/bin"
+  addPath "$JAVA_HOME/bin"
   addPath "~/.cargo/bin"
   addPath "/opt/gradle/gradle-7.5.1/bin"
   addPath "/home/linuxbrew/.linuxbrew/bin"
   addPath "~/Programs"
+  addPath "$HOME/.local/bin/"
 
   set -o vi
   confdir=~/dotfiles/bash
@@ -51,16 +53,3 @@
   export HISTSIZE=-1
   export HISTFILESIZE=
 # }
-
-# less color {
-  export LESS="--RAW-CONTROL-CHARS"
-  export LESS_TERMCAP_mb=$'\e[1;31m'     # begin bold
-  export LESS_TERMCAP_md=$'\e[1;33m'     # begin blink
-  export LESS_TERMCAP_so=$'\e[01;44;37m' # begin reverse video
-  export LESS_TERMCAP_us=$'\e[01;37m'    # begin underline
-  export LESS_TERMCAP_me=$'\e[0m'        # reset bold/blink
-  export LESS_TERMCAP_se=$'\e[0m'        # reset reverse video
-  export LESS_TERMCAP_ue=$'\e[0m'        # reset underline
-# }
-. "$HOME/.cargo/env"
-export PATH="$HOME/.local/bin/:$PATH"

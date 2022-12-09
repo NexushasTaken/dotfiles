@@ -1,5 +1,3 @@
-require'config.options'
-
 local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.config/nvim/.plugged')
 Plug'folke/tokyonight.nvim' -- Theme
@@ -28,6 +26,7 @@ Plug'jghauser/mkdir.nvim' -- Make dirs when saving files
 Plug'davidgranstrom/nvim-markdown-preview' -- Markdown Preview
 Plug'kdheepak/lazygit.nvim' -- Lazygit
 Plug'prettier/vim-prettier' -- Prettier
+Plug'sakhnik/nvim-gdb'
 
 -- Telescope
 Plug'nvim-telescope/telescope.nvim'
@@ -56,6 +55,8 @@ Plug'p00f/clangd_extensions.nvim'
 Plug'Hoffs/omnisharp-extended-lsp.nvim'
 -- Typescript
 Plug'jose-elias-alvarez/typescript.nvim'
+-- Godot
+Plug'habamax/vim-godot'
 -- }
 vim.call('plug#end')
 
@@ -68,6 +69,7 @@ require'config.luasnip'
 require'config.treesitter'
 require'config.lspconfig'
 require'config.lightline'
+require'config.options'
 
 -- Direct plugin setups
 require'hop'.setup()

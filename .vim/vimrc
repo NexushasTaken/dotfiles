@@ -1,0 +1,24 @@
+set termguicolors
+set nocompatible
+call plug#begin('~/.vim/.plugged')
+Plug 'itchyny/lightline.vim'
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'habamax/vim-godot'
+call plug#end()
+
+" Options {
+set number
+set relativenumber
+set noshowmode
+set laststatus=2
+" }
+
+" Tokyonight {
+let g:lightline = {'colorscheme' : 'tokyonight'}
+let g:tokyonight_style = 'night'
+let g:tokyonight_enable_italic = 1
+colorscheme tokyonight
+" }
+
+syntax on

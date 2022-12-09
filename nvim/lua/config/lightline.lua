@@ -38,8 +38,8 @@ vim.g.lightline = {
     lineperc = '%3p%% %3l:%-2c',
     filetype = '%{filetype()}',
   },
-  separator = { left = ' ', right = ' ' },
-  subseparator = { left = ' ', right = ' ' },
+  separator = { left = ' ', right = ' ' },
+  subseparator = { left = ' ', right = ' ' },
   tabline_separator = { left = '', right = '' },
   tabline_subseparator = { left = '', right = '' },
 }

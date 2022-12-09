@@ -9,6 +9,7 @@ local on_attach = function(_, bufnr)
   -- For some reason some language server tabstop and shiftwidth is set to 4
   vim.opt.tabstop    = 2
   vim.opt.shiftwidth = 2
+  vim.opt.expandtab  = true
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   local bufopts = {
