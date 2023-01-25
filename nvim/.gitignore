@@ -1,5 +1,3 @@
 .plugged/
 .sessions/
 .vim_undoes/
-.plugin
-*.sw*
