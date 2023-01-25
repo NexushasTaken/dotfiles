@@ -1,6 +1,6 @@
 require'sessions'.setup()
 local session = require'sessions'
-local dir_session = os.getenv('HOME') .. '/.config/nvim/.sessions/'.. vim.fn.getcwd():gsub('/', '_')
+local dir_session = os.getenv('HOME') .. '/.local/share/nvim/sessions/'.. vim.fn.getcwd():gsub('/', '_')
 vim.keymap.set('n', '<leader>ss', function()
   session.save(dir_session)
   print'Session saved'

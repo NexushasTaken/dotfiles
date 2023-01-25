@@ -1,7 +1,6 @@
 function map(mode, lhs, rhs, opts)
   opts = opts or { noremap=true }
-  vim.keymap.set(mode, lhs, rhs, opts)
-end
+  vim.keymap.set(mode, lhs, rhs, opts) end
 vim.g.mapleader = ' '
 
 map('n', '<leader>q', ':qa!<cr>')

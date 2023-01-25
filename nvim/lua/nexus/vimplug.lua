@@ -1,5 +1,5 @@
 local Plug = vim.fn['plug#']
-vim.call('plug#begin', '~/.config/nvim/.plugged')
+vim.call'plug#begin'
 Plug'folke/tokyonight.nvim' -- Theme
 Plug'nvim-treesitter/nvim-treesitter' -- Better syntax highlighting
 Plug'itchyny/lightline.vim' -- Status line

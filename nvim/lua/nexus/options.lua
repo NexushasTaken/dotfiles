@@ -25,7 +25,6 @@ opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.showtabline = 2
 opt.scrolloff = 2
-opt.undodir = fn.getenv'HOME'..'/.config/nvim/.vim_undoes'
 opt.expandtab = fn.tolower(fn.expand'#') ~= 'makefile'
 opt.directory = fn.getcwd()
 
