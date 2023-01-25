@@ -13,5 +13,4 @@
 ### Clone and install
     git clone https://github.com/NexushasTaken/dotfiles ~/dotfiles && ~/dotfiles/install.sh
 ### Required
-- Download and install [Hack Nerd Font](https://www.nerdfonts.com/font-downloads).
 - Important! Change the value of 'name' and 'email' in .gitconfig.
