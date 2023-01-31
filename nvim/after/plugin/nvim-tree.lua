@@ -8,13 +8,6 @@ require'nvim-tree'.setup{
     number = true,
     relativenumber = true,
     preserve_window_proportions = true,
-    float = {
-      enable = false,
-      open_win_config = {
-        relative = 'cursor',
-        height = 23,
-      },
-    },
   },
   renderer = {
     add_trailing = true,

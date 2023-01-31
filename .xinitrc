@@ -19,4 +19,3 @@ xset r rate 400 20 # Change Keyrepeat
 
 slstatus &
 exec dwm
-#exec ~/Workspace/c/xlib-test/main
