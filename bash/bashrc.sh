@@ -41,6 +41,7 @@
   addPath "/home/linuxbrew/.linuxbrew/bin"
   addPath "~/Programs"
   addPath "$HOME/.local/bin/"
+  addPath "$HOME/.ghcup/bin/"
 
   source $confdir/theme.sh
   source $confdir/z.sh
