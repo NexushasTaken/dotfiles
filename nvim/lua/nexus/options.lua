@@ -26,11 +26,12 @@ opt.softtabstop = 2
 opt.showtabline = 2
 opt.scrolloff = 2
 opt.expandtab = fn.tolower(fn.expand'#') ~= 'makefile'
-opt.directory = fn.getcwd()
+opt.directory = fn.getcwd()..'/.swaps'
 
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 g.python_recommended_style = 0
 g.rust_recommended_style = 0
+g.loaded_z_defaults = 1
 
 fn.setenv('MANWIDTH', 94)
