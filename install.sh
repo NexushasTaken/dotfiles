@@ -11,6 +11,7 @@ ln -sf $DOT/rofi/ ~/.config/
 ln -sf $DOT/rustfmt/ ~/.config/
 ln -sf $DOT/tmux/ ~/.config/
 ln -sf $DOT/i3/ ~/.config/
+ln -sf $DOT/clangd/ ~/.config/
 
 ln -sf $DOT/.vim ~/.vim
 ln -sf $DOT/.xinitrc ~/.xsessionrc
