@@ -1,0 +1,1 @@
+/home/nexus/dotfiles/.vim

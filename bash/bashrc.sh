@@ -10,6 +10,7 @@
   alias man='man --nh --nj'
   alias less='less -Rn --mouse'
   alias pacman='sudo pacman'
+  alias mv='mv -n'
   
   alias e='exa --icons --group-directories-first -s type'
   alias ea='exa --icons --group-directories-first -s type -Fa'
@@ -41,7 +42,13 @@
   addPath "/home/linuxbrew/.linuxbrew/bin"
   addPath "~/Programs"
   addPath "$HOME/.local/bin/"
+<<<<<<< HEAD
   addPath "$HOME/.ghcup/bin/"
+=======
+  addPath "$HOME/Programs/zig/"
+  addPath "$HOME/.cabal/bin"
+  addPath "$HOME/.ghcup/bin"
+>>>>>>> origin/master
 
   source $confdir/theme.sh
   source $confdir/z.sh
