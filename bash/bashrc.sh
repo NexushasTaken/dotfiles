@@ -40,15 +40,10 @@
   addPath "~/.cargo/bin"
   addPath "/opt/gradle/gradle-7.5.1/bin"
   addPath "/home/linuxbrew/.linuxbrew/bin"
-  addPath "~/Programs"
-  addPath "$HOME/.local/bin/"
-<<<<<<< HEAD
-  addPath "$HOME/.ghcup/bin/"
-=======
   addPath "$HOME/Programs/zig/"
   addPath "$HOME/.cabal/bin"
   addPath "$HOME/.ghcup/bin"
->>>>>>> origin/master
+  addPath "~/Programs"
 
   source $confdir/theme.sh
   source $confdir/z.sh
