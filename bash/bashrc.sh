@@ -12,14 +12,15 @@
   alias pacman='sudo pacman'
   alias mv='mv -n'
   
-  alias e='exa --icons --group-directories-first -s type'
-  alias ea='exa --icons --group-directories-first -s type -Fa'
-  alias el='exa --icons --group-directories-first -s type -Fl'
-  alias et='exa --icons --group-directories-first -s type -FTL=2'
-  alias eal='exa --icons --group-directories-first -s type -Fla'
-  alias eat='exa --icons --group-directories-first -s type -FaTL=2'
-  alias elt='exa --icons --group-directories-first -s type -FlTL=2'
-  alias ealt='exa --icons --group-directories-first -s type -FlaTL=2'
+  exaflag='--icons --group-directories-first -gs type'
+  alias e="exa $exaflag"
+  alias ea="exa $exaflag -Fa"
+  alias el="exa $exaflag -Fl"
+  alias et="exa $exaflag -FTL=2"
+  alias eal="exa $exaflag -Fla"
+  alias eat="exa $exaflag -FaTL=2"
+  alias elt="exa $exaflag -FlTL=2"
+  alias ealt="exa $exaflag -FlaTL=2"
 # }
 
 # Others {
@@ -47,6 +48,7 @@
 
   source $confdir/theme.sh
   source $confdir/z.sh
+  source $confdir/arduino-completion.sh
   source ~/.cargo/env 2> /dev/null
 
   set -o vi
