@@ -17,5 +17,7 @@ xset s off # Turn off Screensaver
 xset -dpms # Disable Display Power Management
 xset r rate 400 20 # Change Keyrepeat
 
+light -S 0
+
 slstatus &
 exec dwm

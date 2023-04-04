@@ -10,17 +10,18 @@
   alias man='man --nh --nj'
   alias less='less -Rn --mouse'
   alias pacman='sudo pacman'
-  alias mv='mv -n'
+  alias mv='mv -nv'
+  alias cp='cp -v'
   
-  exaflag='--icons --group-directories-first -gs type'
-  alias e="exa $exaflag"
-  alias ea="exa $exaflag -Fa"
-  alias el="exa $exaflag -Fl"
-  alias et="exa $exaflag -FTL=2"
-  alias eal="exa $exaflag -Fla"
-  alias eat="exa $exaflag -FaTL=2"
-  alias elt="exa $exaflag -FlTL=2"
-  alias ealt="exa $exaflag -FlaTL=2"
+  exaflags='--icons --group-directories-first -gs type'
+  alias e="exa $exaflags"
+  alias ea="exa $exaflags -Fa"
+  alias el="exa $exaflags -Fl"
+  alias et="exa $exaflags -FTL=2"
+  alias eal="exa $exaflags -Fla"
+  alias eat="exa $exaflags -FaTL=2"
+  alias elt="exa $exaflags -FlTL=2"
+  alias ealt="exa $exaflags -FlaTL=2"
 # }
 
 # Others {
@@ -30,6 +31,7 @@
   }
   export JAVA_HOME="/usr/lib/jvm/jdk-17.0.2"
   export EDITOR=nvim
+  export SUDO_EDITOR=$EDITOR
   export VISUAL=$EDITOR
   export HISTCONTROL=erasedups
   export HISTSIZE=-1
