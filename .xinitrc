@@ -20,4 +20,5 @@ xset r rate 400 20 # Change Keyrepeat
 light -S 0
 
 slstatus &
-exec dwm
+#exec dwm
+exec i3

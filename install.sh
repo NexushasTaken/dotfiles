@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 DOT=~/dotfiles
 mkdir -p ~/.config
-directories="bash btop htop rustfmt tmux clangd"
+directories="bash btop htop rustfmt tmux clangd i3 i3status"
 for dir in $directories; do
   ln -sf $DOT/$dir/ ~/.config/
 done
