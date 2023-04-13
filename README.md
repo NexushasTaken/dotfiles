@@ -17,5 +17,5 @@ git clone https://github.com/NexushasTaken/dotfiles
 cd dotfiles
 ./install.sh
 ```
-### Required
-- Important! Change the value of 'name' and 'email' in .gitconfig.
+### Important
+- Change the value of `name` and `email` in [Git Config](.gitconfig).
