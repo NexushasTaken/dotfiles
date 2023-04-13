@@ -1,14 +1,21 @@
-# Nexus Personal Dotfiles
+# My Personal Dotfiles
 
 ## Contents
 1. Bash - Unix Shell
-2. [Btop](https://github.com/aristocratos/btop) - Similar to htop but better
-3. [Htop](https://htop.dev) - Interactive process viewer
-4. [Rofi](https://github.com/davatorium/rofi) - Application launcher
-5. [Tmux](https://github.com/tmux/tmux) - Terminal multiplexer
+1. [clangd](https://clangd.llvm.org) - Code analysis and completion
+1. [htop](https://htop.dev) - Interactive process viewer
+1. [i3](https://i3wm.org) - Window Manager
+1. [i3status](https://i3wm.org/i3status) - i3 status
+1. [rustfmt](https://github.com/rust-lang/rustfmt) - Rust formatter
+1. [tmux](https://github.com/tmux/tmux) - Terminal multiplexer
+1. [picom](https://github.com/yshui/picom) - A lightweight compositor for X
 
 ## How to use
 ### Clone and install
-    git clone https://github.com/NexushasTaken/dotfiles ~/dotfiles && ~/dotfiles/install.sh
+```sh
+git clone https://github.com/NexushasTaken/dotfiles
+cd dotfiles
+./install.sh
+```
 ### Required
 - Important! Change the value of 'name' and 'email' in .gitconfig.

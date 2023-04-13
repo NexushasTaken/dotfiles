@@ -11,7 +11,7 @@
   alias less='less -Rn --mouse'
   alias pacman='sudo pacman'
   alias mv='mv -nv'
-  alias cp='cp -v'
+  alias cp='cp -vu'
   
   exaflags='--icons --group-directories-first -gs type'
   alias e="exa $exaflags"
@@ -36,6 +36,13 @@
   export HISTCONTROL=erasedups
   export HISTSIZE=-1
   export HISTFILESIZE=
+
+  # XDG Directories
+  export XDG_CONFIG_HOME=$HOME/.config
+  export XDG_CACHE_HOME=$HOME/.cache
+  export XDG_DATA_HOME=$HOME/.local/state
+  export XDG_DATA_DIRS=/usr/local/share:/usr/share
+  export XDG_CONFIG_DIRS=/etc/xdg
 
   addPath "~/Libraries/lua-language-server/bin"
   addPath "~/Libraries/jdtls/bin"
