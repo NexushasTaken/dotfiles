@@ -29,7 +29,7 @@
   addPath() {
     export PATH="$PATH:$1"
   }
-  export JAVA_HOME="/usr/lib/jvm/jdk-17.0.2"
+  export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
   export EDITOR=nvim
   export SUDO_EDITOR=$EDITOR
   export VISUAL=$EDITOR
