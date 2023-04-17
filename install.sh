@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 DOT=~/dotfiles
+
 mkdir -p ~/.config
 
 linked() {
-  dst=${@: -1}
+  local dst=${@: -1}
   for i in $(seq 1 $(($#-1))); do
-    value=${@: i:1}
-    len=$(echo $value | tr ":" "\n" | wc -l)
+    local value=${@: i:1}
+    local len=$(echo $value | tr ":" "\n" | wc -l)
 
     if [ $len -eq 1 ]; then
       file=$value
@@ -15,16 +16,12 @@ linked() {
       file=$(echo $value | cut -d ":" -f1)
       out=$(echo $value | cut -d ":" -f2)
     fi
-    unset len
-    unset value
 
-    dir=$dst/$out
+    local dir=$dst/$out
     if [[ ! -a $dir ]]; then
       ln -sf $DOT/$file $dir
     fi
-    unset dir
   done
-  unset dst
 }
 
 dirs="
