@@ -4,7 +4,6 @@
   alias vimrc='cd ~/.config/nvim'
   alias cd='cd -P'
   alias x='exit'
-  alias c='clear'
   alias vi='nvim'
   alias vif='nvim $(fzf)'
   alias man='man --nh --nj'
@@ -22,6 +21,16 @@
   alias eat="exa $exaflags -FaTL=2"
   alias elt="exa $exaflags -FlTL=2"
   alias ealt="exa $exaflags -FlaTL=2"
+
+  c() {
+    clear
+    [[ -n $TMUX ]] && tmux clear-history
+    return 0
+  }
+  cr() {
+    c
+    reset
+  }
 # }
 
 # Others {
