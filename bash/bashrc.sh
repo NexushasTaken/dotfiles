@@ -12,15 +12,15 @@
   alias mv='mv -nv'
   alias cp='cp -vu'
   
-  exaflags='--icons --group-directories-first -gs type'
+  exaflags='--classify --extended --color-scale --icons --group-directories-first --group --sort=type'
   alias e="exa $exaflags"
-  alias ea="exa $exaflags -Fa"
-  alias el="exa $exaflags -Fl"
-  alias et="exa $exaflags -FTL=2"
-  alias eal="exa $exaflags -Fla"
-  alias eat="exa $exaflags -FaTL=2"
-  alias elt="exa $exaflags -FlTL=2"
-  alias ealt="exa $exaflags -FlaTL=2"
+  alias ea="exa $exaflags --all"
+  alias el="exa $exaflags --long"
+  alias eal="exa $exaflags --long -a"
+  alias et="exa $exaflags --tree --level=2"
+  alias eat="exa $exaflags --tree --level=2 --all"
+  alias elt="exa $exaflags --tree --level=2 --long"
+  alias ealt="exa $exaflags --tree --level=2 --all --long"
 
   c() {
     clear
@@ -38,11 +38,11 @@
   addPath() {
     export PATH="$PATH:$1"
   }
-  export JAVA_HOME="/usr/lib/jvm/java-19-openjdk"
+  export JAVA_HOME="/usr/lib/jvm/default"
   export EDITOR=nvim
   export SUDO_EDITOR=$EDITOR
   export VISUAL=$EDITOR
-  export HISTCONTROL=erasedups
+  export HISTCONTROL=ignoredups
   export HISTSIZE=-1
   export HISTFILESIZE=
 
