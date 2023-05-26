@@ -65,8 +65,9 @@ bindsym $mod+Shift+c kill
 bindsym --release $mod+Shift+x exec xkill
 
 # Scrot
-bindsym --release Print exec scrot -q 100
-bindsym --release Shift+Print exec scrot -q 100 -s
+set $scrot_cmd 'scrot_%a-%b-%d-%G_%H:%M:%S.png' -e 'optipng $f' -q 100 -p
+bindsym --release Print exec scrot $scrot_cmd
+bindsym --release Shift+Print exec scrot $scrot_cmd -s
 
 # Run dmenu
 bindsym $mod+p exec --no-startup-id dmenu_run -fn 'Hack Nerd Font:size=10' -nb '$bg' -nf '$fg' -sb '$bg_highlight' -sf '$fg_dark'

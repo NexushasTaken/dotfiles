@@ -41,6 +41,7 @@ fdir="
   .gitconfig
   .gdbinit
   .omnisharp
+  .Xresources
   bash/bashrc.sh:.bashrc
   bash/bashrc.sh:.profile"
 linked $fdir ~

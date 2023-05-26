@@ -1,38 +1,5 @@
 #!/usr/bin/env bash
 #vim: ft=bash
-# Aliases {
-  alias vimrc='cd ~/.config/nvim'
-  alias cd='cd -P'
-  alias x='exit'
-  alias vi='nvim'
-  alias vif='nvim $(fzf)'
-  alias man='man --nh --nj'
-  alias less='less -Rn --mouse'
-  alias pacman='sudo pacman'
-  alias mv='mv -nv'
-  alias cp='cp -vu'
-  
-  exaflags='--classify --extended --color-scale --icons --group-directories-first --group --sort=type'
-  alias e="exa $exaflags"
-  alias ea="exa $exaflags --all"
-  alias el="exa $exaflags --long"
-  alias eal="exa $exaflags --long -a"
-  alias et="exa $exaflags --tree --level=2"
-  alias eat="exa $exaflags --tree --level=2 --all"
-  alias elt="exa $exaflags --tree --level=2 --long"
-  alias ealt="exa $exaflags --tree --level=2 --all --long"
-
-  c() {
-    clear
-    [[ -n $TMUX ]] && tmux clear-history
-    return 0
-  }
-  cr() {
-    c
-    reset
-  }
-# }
-
 # Others {
   confdir=~/dotfiles/bash
   addPath() {
@@ -64,10 +31,60 @@
   addPath "$HOME/.ghcup/bin"
   addPath "~/Programs"
 
-  source $confdir/theme.sh
+  export THEME=$confdir/theme.sh
+  if [[ -f $THEME ]]; then
+    export DEFAULT_USER=`whoami`
+    source $THEME
+  fi
   source $confdir/z.sh
-  source $confdir/arduino-completion.sh
   source ~/.cargo/env 2> /dev/null
+  for file in $(exa $confdir/completions); do
+    source $confdir/completions/$file
+  done
 
   set -o vi
+# }
+
+# Aliases {
+  alias vimrc="cd ~/.config/nvim"
+  alias cd="cd -P"
+  alias x="exit"
+  alias vi="nvim"
+  alias vif='nvim $(fzf)'
+  alias man="man --nh --nj"
+  alias less="less -Rn --mouse"
+  alias pacman="sudo pacman"
+  alias mv="mv -v"
+  alias cp="cp -v"
+  alias rm="rm"
+  alias ln="ln -v"
+  
+  exaflags="--classify --extended --color-scale --icons --group-directories-first --group --sort=type"
+  alias e="exa $exaflags"
+  alias ea="exa $exaflags --all"
+  alias el="exa $exaflags --long"
+  alias eal="exa $exaflags --long -a"
+  alias et="exa $exaflags --tree --level=2"
+  alias eat="exa $exaflags --tree --level=2 --all"
+  alias elt="exa $exaflags --tree --level=2 --long"
+  alias ealt="exa $exaflags --tree --level=2 --all --long"
+  unset exaflags
+
+  clear-tmux() {
+    clear
+    [[ -n $TMUX ]] && tmux clear-history
+    return 0
+  }
+  clear-reset() {
+    clear-tmux
+    reset
+    return 0
+  }
+  clear-history() {
+    [[ -a $HISTFILE ]] && rm $HISTFILE
+    return 0
+  }
+  alias clear="clear-tmux"
+  alias c="clear-tmux"
+  alias cr="clear-reset"
 # }
