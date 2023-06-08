@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #vim: ft=bash
 # Others {
-  confdir=~/dotfiles/bash
+  confdir=$HOME/dotfiles/bash
   addPath() {
     export PATH="$PATH:$1"
   }
@@ -17,19 +17,15 @@
   export XDG_CONFIG_HOME=$HOME/.config
   export XDG_CACHE_HOME=$HOME/.cache
   export XDG_DATA_HOME=$HOME/.local/state
+  export XDG_STATE_HOME=$HOME/.local/state
   export XDG_DATA_DIRS=/usr/local/share:/usr/share
   export XDG_CONFIG_DIRS=/etc/xdg
 
-  addPath "~/Libraries/lua-language-server/bin"
-  addPath "~/Libraries/jdtls/bin"
   addPath "$JAVA_HOME/bin"
-  addPath "~/.cargo/bin"
-  addPath "/opt/gradle/gradle-7.5.1/bin"
-  addPath "/home/linuxbrew/.linuxbrew/bin"
-  addPath "$HOME/Programs/zig/"
-  addPath "$HOME/.cabal/bin"
+  addPath "$HOME/programs/zig/"
   addPath "$HOME/.ghcup/bin"
-  addPath "~/Programs"
+  addPath "$HOME/.cargo/bin"
+  addPath "$HOME/programs"
 
   export THEME=$confdir/theme.sh
   if [[ -f $THEME ]]; then
@@ -37,7 +33,7 @@
     source $THEME
   fi
   source $confdir/z.sh
-  source ~/.cargo/env 2> /dev/null
+  source $HOME/.cargo/env 2> /dev/null
   for file in $(exa $confdir/completions); do
     source $confdir/completions/$file
   done
@@ -58,6 +54,7 @@
   alias cp="cp -v"
   alias rm="rm"
   alias ln="ln -v"
+  alias make="make -j 2"
   
   exaflags="--classify --extended --color-scale --icons --group-directories-first --group --sort=type"
   alias e="exa $exaflags"
