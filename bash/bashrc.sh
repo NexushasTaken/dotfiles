@@ -22,10 +22,11 @@
   export XDG_CONFIG_DIRS=/etc/xdg
 
   addPath "$JAVA_HOME/bin"
-  addPath "$HOME/programs/zig/"
+  addPath "$HOME/programs/zig"
   addPath "$HOME/.ghcup/bin"
   addPath "$HOME/.cargo/bin"
   addPath "$HOME/programs"
+  addPath "$HOME/.local/bin"
 
   export THEME=$confdir/theme.sh
   if [[ -f $THEME ]]; then
