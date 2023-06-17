@@ -18,13 +18,15 @@ linked() {
     fi
 
     local dir=$dst/$out
-    if [[ ! -a $dir ]]; then
+    if [[ ! -a $dir && -a $DOT/$file ]]; then
+      echo "$dir"
       ln -sf $DOT/$file $dir
     fi
   done
 }
 
 dirs="
+  gdb
   bash
   btop
   htop
@@ -39,7 +41,6 @@ fdir="
   .xinitrc:.xsessionrc
   .xinitrc
   .gitconfig
-  .gdbinit
   .omnisharp
   .Xresources
   bash/bashrc.sh:.bashrc
