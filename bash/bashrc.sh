@@ -82,6 +82,10 @@
     [[ -a $HISTFILE ]] && rm $HISTFILE
     return 0
   }
+  mkcd() {
+    mkdir $1
+    cd $1
+  }
   alias clear="clear-tmux"
   alias c="clear-tmux"
   alias cr="clear-reset"
