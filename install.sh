@@ -43,6 +43,7 @@ fdir="
   .gitconfig
   .omnisharp
   .Xresources
+  .inputrc
   bash/bashrc.sh:.bashrc
   bash/bashrc.sh:.profile"
 linked $fdir ~

@@ -22,11 +22,10 @@
   export XDG_CONFIG_DIRS=/etc/xdg
 
   addPath "$JAVA_HOME/bin"
-  addPath "$HOME/programs/zig"
   addPath "$HOME/.ghcup/bin"
   addPath "$HOME/.cargo/bin"
-  addPath "$HOME/programs"
   addPath "$HOME/.local/bin"
+  addPath "$HOME/.local/state/gem/ruby/3.0.0/bin"
 
   export THEME=$confdir/theme.sh
   if [[ -f $THEME ]]; then
@@ -56,6 +55,7 @@
   alias rm="rm"
   alias ln="ln -v"
   alias make="make -j 2"
+  alias gdb="gdb -q"
   
   exaflags="--classify --extended --color-scale --icons --group-directories-first --group --sort=type"
   alias e="exa $exaflags"
