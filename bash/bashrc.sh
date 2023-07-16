@@ -21,6 +21,8 @@
   export XDG_DATA_DIRS=/usr/local/share:/usr/share
   export XDG_CONFIG_DIRS=/etc/xdg
 
+  export PKG_CONFIG_PATH=/usr/local/pkgconfig
+
   addPath "$JAVA_HOME/bin"
   addPath "$HOME/.ghcup/bin"
   addPath "$HOME/.cargo/bin"

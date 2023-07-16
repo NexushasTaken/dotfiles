@@ -1,20 +1,12 @@
+Index:
+  StandardLibrary: Yes
 Hover:
-  ShowAKA: Yes
+  ShowAKA: True
 CompileFlags:
-  Add: [ -Wall, -Wno-old-style-cast, -Wno-switch, -Wno-sign-conversion,
-         -Wno-implicit-int-conversion, -Wno-padded, -Wno-sign-compare,
-         -Wno-shorten-64-to-32, -Wno-double-promotion, -Wno-implicit-int-float-conversion,
-         -Wno-zero-as-null-pointer-constant, -Wno-exit-time-destructors, -Wno-global-constructors,
-         -Wno-missing-variable-declarations
-         # Gtk includes {
-         -I/usr/include/gtk-4.0, -I/usr/include/pango-1.0, 
-         -I/usr/include/glib-2.0, -I/usr/lib/glib-2.0/include, 
-         -I/usr/include/sysprof-4, -I/usr/include/harfbuzz, 
-         -I/usr/include/freetype2, -I/usr/include/libpng16, 
-         -I/usr/include/libmount, -I/usr/include/blkid, 
-         -I/usr/include/fribidi, -I/usr/include/cairo, 
-         -I/usr/include/pixman-1, -I/usr/include/gdk-pixbuf-2.0, 
-         -I/usr/include/graphene-1.0, -I/usr/lib/graphene-1.0/include,
-         # }
-         -Ideps, -Idependencies, -Iinclude, -Iinc,
-       ]
+  Add: [
+      -Wall, -Wno-old-style-cast, -Wno-switch, -Wno-sign-conversion,
+      -Wno-implicit-int-conversion, -Wno-padded, -Wno-sign-compare,
+      -Wno-shorten-64-to-32, -Wno-double-promotion, -Wno-implicit-int-float-conversion,
+      -Wno-zero-as-null-pointer-constant, -Wno-exit-time-destructors, -Wno-global-constructors,
+      -Wno-missing-variable-declarations
+    ]
