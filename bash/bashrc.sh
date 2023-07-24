@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 #vim: ft=bash
 # Others {
-  confdir=$HOME/dotfiles/bash
+  bash_path=$HOME/dotfiles/bash
   addPath() {
+    if [[ ! -d $1 ]]; then
+      echo "$1 not found or isn't directory" 
+      return 0
+    fi
     export PATH="$PATH:$1"
   }
   export JAVA_HOME="/usr/lib/jvm/default"
@@ -29,15 +33,15 @@
   addPath "$HOME/.local/bin"
   addPath "$HOME/.local/state/gem/ruby/3.0.0/bin"
 
-  export THEME=$confdir/theme.sh
+  export THEME=$bash_path/theme.sh
   if [[ -f $THEME ]]; then
-    export DEFAULT_USER=`whoami`
+    export DEFAULT_USER=$(whoami)
     source $THEME
   fi
-  source $confdir/z.sh
+  source $bash_path/z.sh
   source $HOME/.cargo/env 2> /dev/null
-  for file in $(exa $confdir/completions); do
-    source $confdir/completions/$file
+  for file in $(exa $bash_path/completions); do
+    source $bash_path/completions/$file
   done
 
   set -o vi
@@ -71,7 +75,7 @@
   unset exaflags
 
   clear-tmux() {
-    clear
+    /usr/bin/clear
     [[ -n $TMUX ]] && tmux clear-history
     return 0
   }
@@ -85,8 +89,7 @@
     return 0
   }
   mkcd() {
-    mkdir $1
-    cd $1
+    mkdir $1 && cd $1
   }
   alias clear="clear-tmux"
   alias c="clear-tmux"
