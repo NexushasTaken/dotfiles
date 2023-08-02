@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-#vim: ft=bash
-# Others {
-  bash_path=$HOME/dotfiles/bash
+# vim: ft=bash
+main() {
+  local bash_path=$HOME/dotfiles/bash
   addPath() {
     if [[ ! -d $1 ]]; then
       echo "$1 not found or isn't directory" 
@@ -9,6 +9,13 @@
     fi
     export PATH="$PATH:$1"
   }
+  addPath "$JAVA_HOME/bin"
+  addPath "$HOME/.ghcup/bin"
+  addPath "$HOME/.cargo/bin"
+  addPath "$HOME/.local/bin"
+  addPath "$HOME/.local/state/gem/ruby/3.0.0/bin"
+
+  export PKG_CONFIG_PATH=/usr/local/pkgconfig
   export JAVA_HOME="/usr/lib/jvm/default"
   export EDITOR=nvim
   export SUDO_EDITOR=$EDITOR
@@ -26,29 +33,20 @@
   export XDG_DATA_DIRS=/usr/local/share:/usr/share
   export XDG_CONFIG_DIRS=/etc/xdg
 
-  export PKG_CONFIG_PATH=/usr/local/pkgconfig
-
-  addPath "$JAVA_HOME/bin"
-  addPath "$HOME/.ghcup/bin"
-  addPath "$HOME/.cargo/bin"
-  addPath "$HOME/.local/bin"
-  addPath "$HOME/.local/state/gem/ruby/3.0.0/bin"
-
+  source $bash_path/local.sh
+  source $HOME/.cargo/env 2> /dev/null
+  source $bash_path/cd.sh
   export THEME=$bash_path/theme.sh
   if [[ -f $THEME ]]; then
     export DEFAULT_USER=$(whoami)
     source $THEME
   fi
-  source $bash_path/z.sh
-  source $HOME/.cargo/env 2> /dev/null
   for file in $(exa $bash_path/completions); do
     source $bash_path/completions/$file
   done
 
   set -o vi
-# }
 
-# Aliases {
   alias vimrc="cd ~/.config/nvim"
   alias cd="cd -P"
   alias x="exit"
@@ -64,7 +62,7 @@
   alias make="make -j 2"
   alias gdb="gdb -q"
   
-  exaflags="--classify --extended --color-scale --icons --group-directories-first --group --sort=type"
+  local exaflags="--classify --extended --color-scale --icons --group-directories-first --group --sort=type"
   alias e="exa $exaflags"
   alias ea="exa $exaflags --all"
   alias el="exa $exaflags --long"
@@ -73,7 +71,6 @@
   alias eat="exa $exaflags --tree --level=2 --all"
   alias elt="exa $exaflags --tree --level=2 --long"
   alias ealt="exa $exaflags --tree --level=2 --all --long"
-  unset exaflags
 
   clear-tmux() {
     /usr/bin/clear
@@ -95,4 +92,6 @@
   alias clear="clear-tmux"
   alias c="clear-tmux"
   alias cr="clear-reset"
-# }
+}
+main
+unset main
