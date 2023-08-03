@@ -35,6 +35,7 @@ dirs="
   clangd
   i3
   i3status
+  bat
   picom.conf"
 fdir="
   .vim
@@ -46,8 +47,8 @@ fdir="
   .inputrc
   bash/bashrc.sh:.bashrc
   bash/bashrc.sh:.profile"
-linked $fdir ~
-linked $dirs $XDG_CONFIG_HOME
+linked $fdir $HOME
+linked $dirs ${XDG_CONFIG_HOME:-$HOME/.config}
 
 # Tmux
 TMUX_RESURRECT=$DOT/tmux/plugins/tmux-resurrect
@@ -60,5 +61,4 @@ if [[ $distro = "Arch Linux" ]]; then
   package_name=ttf-hack-nerd
   [ -n $(pacman -Qq $package_name) ] ||
     sudo pacman -S $package_name
-  unset package_name
 fi
