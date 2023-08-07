@@ -70,7 +70,7 @@ bindsym --release Print exec scrot $scrot_cmd
 bindsym --release Shift+Print exec scrot $scrot_cmd -s
 
 # Run dmenu
-bindsym $mod+p exec --no-startup-id dmenu_run -fn 'Hack Nerd Font:size=10' -nb '$bg' -nf '$fg' -sb '$bg_highlight' -sf '$fg_dark'
+bindsym $mod+p exec --no-startup-id dmenu_run
 
 # change focus
 bindsym $mod+h focus left

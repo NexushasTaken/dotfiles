@@ -1,12 +1,22 @@
-[user]
-  name="NexushasTaken"
-  email="nexushastaken@gmail.com"
+[include]
+  path = "~/dotfiles/.gitconfig.inc"
 [core]
   editor="nvim"
 [init]
   defaultBranch="master"
 [diff]
   submodule = log
+[advice]
+  statusHints = false
+  addEmptyPathspec = false
+[alias]
+  sdiff = diff --staged
+[merge]
+  tool = nvimdiff
+[mergetool]
+  keepBackup = false
+[mergetool.vimdiff]
+  layout = "LOCAL,REMOTE/MERGED"
 [gui]
   fontui = -family \"Hack Nerd Font\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
   fontdiff = -family \"Hack Nerd Font\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0

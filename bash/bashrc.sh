@@ -51,7 +51,10 @@ main() {
   alias cd="cd -P"
   alias x="exit"
   alias vi="nvim"
-  alias vif='nvim $(fzf)'
+  function vif() {
+    local file=$(fzf)
+    [[ -n $file ]] && nvim $file || \builtin true
+  }
   alias man="man --nh --nj"
   alias less="less -Rn --mouse"
   alias pacman="sudo pacman"
