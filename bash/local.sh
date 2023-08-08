@@ -3,8 +3,9 @@
 alias psql="PAGER='nvim --clean -R' psql"
 codoo() {
   ODOO_PATH=$HOME/odoo-dev
-  local addons_path="$ODOO_PATH/addons,$ODOO_PATH/odoo/addons"
-  local cmd="odoo -D $PWD/.cache/odoo --dev=all"
+  local addons_path="--addons-path=$ODOO_PATH/addons,$ODOO_PATH/odoo/addons"
+  local cmd='odoo'
+  local args=''
 
   add_path() {
     local path=$(realpath $1)
@@ -19,10 +20,10 @@ codoo() {
   }
   add_path .
 
-  for i in $(seq 3); do
+  for i in $(seq 4); do
     case $1 in
       init)
-        cmd="$cmd -i all"
+        args="$args -i all"
         shift
       ;;paths)
         shift
@@ -31,11 +32,14 @@ codoo() {
         done
         shift
       ;;db)
-        cmd="$cmd -d $(basename $(pwd))"
+        args="$args -d $(basename $(pwd))"
+        shift
+      ;;shell)
+        cmd="$cmd shell"
         shift
     esac
   done
 
   unset add_path
-  $PREFIX $cmd --addons-path=$addons_path $@
+  $PREFIX $cmd -D $PWD/.cache/odoo --dev=all $args $addons_path $@
 }
