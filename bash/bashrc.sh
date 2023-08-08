@@ -2,18 +2,18 @@
 # vim: ft=bash
 main() {
   local bash_path=$HOME/dotfiles/bash
-  addPath() {
+  add_path() {
     if [[ ! -d $1 ]]; then
       echo "$1 not found or isn't directory" 
       return 0
     fi
-    export PATH="$PATH:$1"
+    PATH+=":$1"
   }
-  addPath "$JAVA_HOME/bin"
-  addPath "$HOME/.ghcup/bin"
-  addPath "$HOME/.cargo/bin"
-  addPath "$HOME/.local/bin"
-  addPath "$HOME/.local/state/gem/ruby/3.0.0/bin"
+  add_path "$JAVA_HOME/bin"
+  add_path "$HOME/.ghcup/bin"
+  add_path "$HOME/.cargo/bin"
+  add_path "$HOME/.local/bin"
+  add_path "$HOME/.local/state/gem/ruby/3.0.0/bin"
 
   export PKG_CONFIG_PATH=/usr/local/pkgconfig
   export JAVA_HOME="/usr/lib/jvm/default"
@@ -36,11 +36,7 @@ main() {
   source $bash_path/local.sh
   source $HOME/.cargo/env 2> /dev/null
   source $bash_path/cd.sh
-  export THEME=$bash_path/theme.sh
-  if [[ -f $THEME ]]; then
-    export DEFAULT_USER=$(whoami)
-    source $THEME
-  fi
+  source $bash_path/prompt.sh
   for file in $(exa $bash_path/completions); do
     source $bash_path/completions/$file
   done
