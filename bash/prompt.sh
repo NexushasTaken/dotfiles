@@ -12,7 +12,7 @@ GIT_PS1_SHOWCONFLICTSTATE=yes
 GIT_PS1_DESCRIBE_STYLE=branch
 
 __ansi() {
-  echo -ne '\033['$1'm'
+  printf '\001\e['$1'm\002'
 }
 
 __fg_color() {
@@ -48,23 +48,57 @@ ps1-help() {
   print_variable "GIT_PS1_COMPRESSSPARSESTATE" $GIT_PS1_COMPRESSSPARSESTATE
   print_variable "GIT_PS1_SHOWCONFLICTSTATE" $GIT_PS1_SHOWCONFLICTSTATE
   print_variable "GIT_PS1_DESCRIBE_STYLE" $GIT_PS1_DESCRIBE_STYLE
+  print_variable "PS1_DIR_NOPARSE" $PS1_DIR_NOPARSE
+  print_variable "PS1_DIR_SHORTEN" $PS1_DIR_SHORTEN
+  print_variable "PS1_REVERSE" $PS1_REVERSE
   unset print_variable
 }
 
 __ps1() {
   local RETVAL=$?
-  local ps1=$(__git_ps1 "(%s)")
-  local status_str=""
-
-  [[ $RETVAL -ne 0 ]] && status_str+="$(__ansi $(__fg_color red))!"
-  [[ $UID -eq 0 ]] && status_str+="$(__ansi $(__fg_color yellow))#"
-  [[ $(jobs -lr | wc -l) -gt 0 ]] && status_str+="$(__ansi $(__fg_color cyan))~"
-  [[ -n $status_str ]] && status_str="[$status_str$(__ansi 0)]" || status_str=""
-
-  [[ -n $ps1 ]] && ps1+="$status_str $(__ansi $(__fg_color blue))󰁔$(__ansi 0) "
-
+  local git_state=$(__git_ps1 "(%s)")
   local dir=${PWD#$HOME}
-  [[ $dir != $PWD ]] && dir="~$dir"
-  echo "$ps1$dir"
+  local status=""
+
+  [[ $RETVAL -ne 0 ]] && status+="$(__ansi $(__fg_color red))$RETVAL"
+  [[ $UID -eq 0 ]] && status+="$(__ansi $(__fg_color yellow))#"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && status+="$(__ansi $(__fg_color cyan))~"
+  [[ -n $status ]] && status="[$status$(__ansi 0)]" || status=""
+
+  local status_git="$git_state$status"
+
+
+  [[ $pwd != $PWD ]] && pwd="~$pwd"
+  if [[ -z $PS1_DIR_NOPARSE ]]; then
+    local raw=$(echo $status_git | sed "s/$(printf '\001\e[[0-9]*m\002')//g")
+    if [[ ${#dir} -gt $(expr $COLUMNS - 3 - ${#raw}) ]]; then
+      local base_name=$(basename $dir)
+      local dir_name=$(dirname $dir)
+      dir=""
+      if [[ -n $PS1_DIR_SHORTEN ]]; then
+        for base in $(echo $dir_name | tr "/" " "); do
+          dir+="${base:0:${PS1_DIR_SHORTEN_LEN-1}}/"
+        done
+      fi
+      dir+="$base_name"
+    fi
+  fi
+  
+  local left="$status_git"
+  local right="$dir"
+
+  local arrow="$(__ansi $(__fg_color blue))"
+  if [[ -n $PS1_REVERSE ]]; then
+    local temp=$left
+    left=$right
+    right=$temp
+    arrow+="󰁍"
+  else
+    arrow+="󰁔"
+  fi
+  arrow+="$(__ansi 0)"
+
+  [[ -n $left ]] && left+=" $arrow "
+  printf '%s%s\n$ ' "$left" "$right"
 }
-PS1='$(__ps1)\n$ '
+PS1='$(__ps1)'

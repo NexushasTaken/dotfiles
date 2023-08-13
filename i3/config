@@ -65,7 +65,7 @@ bindsym $mod+Shift+c kill
 bindsym --release $mod+Shift+x exec xkill
 
 # Scrot
-set $scrot_cmd 'scrot_%a-%b-%d-%G_%H:%M:%S.png' -e 'optipng $f' -q 100 -p
+set $scrot_cmd ~/Pictures/scrot_%a-%b-%d-%G_%H:%M:%S.png -e 'optipng $f' -q 100 -p
 bindsym --release Print exec scrot $scrot_cmd
 bindsym --release Shift+Print exec scrot $scrot_cmd -s
 
