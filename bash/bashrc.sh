@@ -72,7 +72,7 @@ main() {
   alias ealt="exa $exaflags --tree --level=2 --all --long"
 
   clear-tmux() {
-    /usr/bin/clear
+    $(which clear)
     [[ -n $TMUX ]] && tmux clear-history
     return 0
   }
