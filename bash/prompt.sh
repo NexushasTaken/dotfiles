@@ -68,7 +68,7 @@ __ps1() {
   local status_git="$git_state$status"
 
 
-  [[ $pwd != $PWD ]] && pwd="~$pwd"
+  [[ $dir != $PWD ]] && dir="~$dir"
   if [[ -z $PS1_DIR_NOPARSE ]]; then
     local raw=$(echo $status_git | sed "s/$(printf '\001\e[[0-9]*m\002')//g")
     if [[ ${#dir} -gt $(expr $COLUMNS - 3 - ${#raw}) ]]; then
