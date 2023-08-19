@@ -14,7 +14,7 @@ codoo() {
     if [[ -d $path ]]; then
       for dir in $(exa -D $path); do
         if [[ -f "$path/$dir/__init__.py" ]]; then
-          addons_path="$addons_path,$path"
+          addons_path+=",$path"
           return 0
         fi
       done
@@ -22,10 +22,10 @@ codoo() {
   }
   add_path .
 
-  for i in $(seq 4); do
+  for i in $(seq 5); do
     case $1 in
       init)
-        args="$args -i all"
+        args+=" -i all"
         shift
       ;;paths)
         shift
@@ -37,11 +37,14 @@ codoo() {
         args="$args -d $(basename $(pwd))"
         shift
       ;;shell)
-        cmd="$cmd shell"
+        cmd+=" shell"
+        shift
+      ;;dev)
+        cmd+=" --dev=all"
         shift
     esac
   done
 
   unset add_path
-  $PREFIX $cmd -D $PWD/.cache/odoo --dev=all $args $addons_path $@
+  $PREFIX $cmd -D $PWD/.cache/odoo $args $addons_path $@
 }
