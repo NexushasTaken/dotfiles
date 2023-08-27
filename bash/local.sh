@@ -40,7 +40,7 @@ codoo() {
         cmd+=" shell"
         shift
       ;;dev)
-        cmd+=" --dev=all"
+        cmd+=" --dev=xml,reload,qweb,pdb,werkzeug"
         shift
     esac
   done

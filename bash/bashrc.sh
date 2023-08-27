@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # vim: ft=bash
-main() {
-  local bash_path=$HOME/dotfiles/bash
-  add_path() {
+export BASH_CONFIG_PATH=$(dirname $(realpath $BASH_SOURCE))
+__bash_main() {
+  function add_path() {
     if [[ ! -d $1 ]]; then
       echo "$1 not found or isn't directory" 
       return 0
@@ -33,12 +33,12 @@ main() {
   export XDG_DATA_DIRS=/usr/local/share:/usr/share
   export XDG_CONFIG_DIRS=/etc/xdg
 
-  source $bash_path/local.sh
+  source $BASH_CONFIG_PATH/local.sh
   source $HOME/.cargo/env 2> /dev/null
-  source $bash_path/cd.sh
-  source $bash_path/prompt.sh
-  for file in $(exa $bash_path/completions); do
-    source $bash_path/completions/$file
+  source $BASH_CONFIG_PATH/cd.sh
+  source $BASH_CONFIG_PATH/prompt.sh
+  for file in $(exa $BASH_CONFIG_PATH/completions); do
+    source $BASH_CONFIG_PATH/completions/$file
   done
 
   set -o vi
@@ -71,26 +71,29 @@ main() {
   alias elt="exa $exaflags --tree --level=2 --long"
   alias ealt="exa $exaflags --tree --level=2 --all --long"
 
-  clear-tmux() {
+  function clear-tmux() {
     $(which clear)
     [[ -n $TMUX ]] && tmux clear-history
     return 0
   }
-  clear-reset() {
+  function clear-reset() {
     clear-tmux
     reset
     return 0
   }
-  clear-history() {
-    [[ -a $HISTFILE ]] && rm $HISTFILE
+  function clear-history() {
+    [[ -a $HISTFILE ]] && rm -f $HISTFILE
     return 0
   }
-  mkcd() {
+  function clear-hard() {
+    clear-reset
+    clear-history
+  }
+  function mkcd() {
     mkdir $1 && cd $1
   }
   alias clear="clear-tmux"
   alias c="clear-tmux"
   alias cr="clear-reset"
 }
-main
-unset main
+__bash_main
