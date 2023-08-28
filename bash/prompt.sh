@@ -87,50 +87,42 @@ function __ps1_help() {
   echo "= set a value"
 }
 
+function __ps1_abbr2name() {
+  case $1 in
+    (sds) printf 'GIT_PS1_SHOWDIRTYSTATE';;
+    (sss) printf 'GIT_PS1_SHOWSTASHSTATE';;
+    (suf) printf 'GIT_PS1_SHOWUNTRACKEDFILES';;
+    (su) printf 'GIT_PS1_SHOWUPSTREAM';;
+    (cps) printf 'GIT_PS1_COMPRESSSPARSESTATE';;
+    (scs) printf 'GIT_PS1_SHOWCONFLICTSTATE';;
+    (pds) printf 'GIT_PS1_DESCRIBE_STYLE';;
+    (dg) printf 'PS1_DISABLE_GIT';;
+    (dp) printf 'PS1_DIR_PARSE';;
+    (ds) printf 'PS1_DIR_SHORTEN';;
+  esac
+}
+
 function ps1() {
   [[ $1 = '-h' ]] && __ps1_help && return
   while [[ $# -gt 0 ]]; do
     case ${1::1} in
       (-|+|=|^)
-        local flag=${1:1}
+        local value
+        local var=$(__ps1_abbr2name ${1:1})
+        if [[ -z $var ]]; then
+          printf "%s invalid option --  '%s' flag\n" $FUNCNAME ${1:1}
+          return 1
+        fi
         case ${1:0:1} in
-          (-)local value=;;
-          (+)local value='1';;
-          (=)local value=$2;shift;;
+          (-)value=;;
+          (+)value='1';;
+          (=)value=$2;shift;;
           (^)
-            case $flag in
-              (sds) value=$GIT_PS1_SHOWDIRTYSTATE;;
-              (sss) value=$GIT_PS1_SHOWSTASHSTATE;;
-              (suf) value=$GIT_PS1_SHOWUNTRACKEDFILES;;
-              (su) value=$GIT_PS1_SHOWUPSTREAM;;
-              (cps) value=$GIT_PS1_COMPRESSSPARSESTATE;;
-              (scs) value=$GIT_PS1_SHOWCONFLICTSTATE;;
-              (pds) value=$GIT_PS1_DESCRIBE_STYLE;;
-              (dg) value=$PS1_DISABLE_GIT;;
-              (dp) value=$PS1_DIR_PARSE;;
-              (ds) value=$PS1_DIR_SHORTEN;;
-              (*)
-                echo "unknown '$flag' flag"
-                return 1;;
-            esac
+            value=$(eval "echo -n \$$var")
             value=$([[ $value = '' ]] && printf '1' || printf '');;
         esac
 
-        case $flag in
-          (sds) GIT_PS1_SHOWDIRTYSTATE=$value;;
-          (sss) GIT_PS1_SHOWSTASHSTATE=$value;;
-          (suf) GIT_PS1_SHOWUNTRACKEDFILES=$value;;
-          (su) GIT_PS1_SHOWUPSTREAM=$value;;
-          (cps) GIT_PS1_COMPRESSSPARSESTATE=$value;;
-          (scs) GIT_PS1_SHOWCONFLICTSTATE=$value;;
-          (pds) GIT_PS1_DESCRIBE_STYLE=$value;;
-          (dg) PS1_DISABLE_GIT=$value;;
-          (dp) PS1_DIR_PARSE=$value;;
-          (ds) PS1_DIR_SHORTEN=$value;;
-          (*)
-            echo "unknown '$flag' flag"
-            return 1
-        esac;;
+        eval "$var=$value";;
       (*)
         echo "'$1' flag must starts with + or - or = or ^"
         return 1;;
