@@ -81,6 +81,7 @@ function __ps1_help() {
   __print_variable "PS1_DISABLE_GIT" "$PS1_DISABLE_GIT" 'dg' 'bool'
   __print_variable "PS1_DIR_PARSE" "$PS1_DIR_PARSE" 'dn' 'bool'
   __print_variable "PS1_DIR_SHORTEN" "$PS1_DIR_SHORTEN" 'ds' 'bool'
+  echo "^ boolean negation"
   echo "- set to false"
   echo "+ set to true"
   echo "= set a value"
@@ -90,16 +91,30 @@ function ps1() {
   [[ $1 = '-h' ]] && __ps1_help && return
   while [[ $# -gt 0 ]]; do
     case ${1::1} in
-      (-|+|=)
+      (-|+|=|^)
         local flag=${1:1}
-        if [[ ${1:0:1} = '-' ]]; then
-          local value=
-        elif [[ ${1:0:1} = '+' ]]; then
-          local value='1'
-        elif [[ ${1:0:1} = '=' ]]; then
-          local value=$2
-          shift
-        fi
+        case ${1:0:1} in
+          (-)local value=;;
+          (+)local value='1';;
+          (=)local value=$2;shift;;
+          (^)
+            case $flag in
+              (sds) value=$GIT_PS1_SHOWDIRTYSTATE;;
+              (sss) value=$GIT_PS1_SHOWSTASHSTATE;;
+              (suf) value=$GIT_PS1_SHOWUNTRACKEDFILES;;
+              (su) value=$GIT_PS1_SHOWUPSTREAM;;
+              (cps) value=$GIT_PS1_COMPRESSSPARSESTATE;;
+              (scs) value=$GIT_PS1_SHOWCONFLICTSTATE;;
+              (pds) value=$GIT_PS1_DESCRIBE_STYLE;;
+              (dg) value=$PS1_DISABLE_GIT;;
+              (dp) value=$PS1_DIR_PARSE;;
+              (ds) value=$PS1_DIR_SHORTEN;;
+              (*)
+                echo "unknown '$flag' flag"
+                return 1;;
+            esac
+            value=$([[ $value = '' ]] && printf '1' || printf '');;
+        esac
 
         case $flag in
           (sds) GIT_PS1_SHOWDIRTYSTATE=$value;;
@@ -117,7 +132,7 @@ function ps1() {
             return 1
         esac;;
       (*)
-        echo "'$1' flag must starts with + or - or ="
+        echo "'$1' flag must starts with + or - or = or ^"
         return 1;;
     esac
     shift
