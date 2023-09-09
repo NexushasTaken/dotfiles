@@ -15,6 +15,10 @@ __bash_main() {
   add_path "$HOME/.local/bin"
   add_path "$HOME/.local/state/gem/ruby/3.0.0/bin"
 
+  # bun
+  export BUN_INSTALL="$HOME/.bun"
+  add_path "$BUN_INSTALL/bin"
+
   export PKG_CONFIG_PATH=/usr/local/pkgconfig
   export JAVA_HOME="/usr/lib/jvm/default"
   export EDITOR=nvim
