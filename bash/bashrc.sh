@@ -2,23 +2,6 @@
 # vim: ft=bash
 export BASH_CONFIG_PATH=$(dirname $(realpath $BASH_SOURCE))
 __bash_main() {
-  function add_path() {
-    if [[ ! -d $1 ]]; then
-      echo "$1 not found or isn't directory" 
-      return 0
-    fi
-    PATH+=":$1"
-  }
-  add_path "$JAVA_HOME/bin"
-  add_path "$HOME/.ghcup/bin"
-  add_path "$HOME/.cargo/bin"
-  add_path "$HOME/.local/bin"
-  add_path "$HOME/.local/state/gem/ruby/3.0.0/bin"
-
-  # bun
-  export BUN_INSTALL="$HOME/.bun"
-  add_path "$BUN_INSTALL/bin"
-
   export PKG_CONFIG_PATH=/usr/local/pkgconfig
   export JAVA_HOME="/usr/lib/jvm/default"
   export EDITOR=nvim
@@ -44,6 +27,23 @@ __bash_main() {
   for file in $(exa $BASH_CONFIG_PATH/completions); do
     source $BASH_CONFIG_PATH/completions/$file
   done
+
+  function add_path() {
+    if [[ ! -d $1 ]]; then
+      echo "$1 not found or isn't directory"
+      return 0
+    fi
+    PATH+=":$1"
+  }
+  add_path "$JAVA_HOME/bin"
+  add_path "$HOME/.ghcup/bin"
+  add_path "$HOME/.cargo/bin"
+  add_path "$HOME/.local/bin"
+  add_path "$HOME/.local/state/gem/ruby/3.0.0/bin"
+
+  # bun
+  export BUN_INSTALL="$HOME/.bun"
+  add_path "$BUN_INSTALL/bin"
 
   set -o vi
 
