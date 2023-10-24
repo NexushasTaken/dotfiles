@@ -48,3 +48,5 @@ codoo() {
   unset add_path
   $PREFIX $cmd -D $PWD/.cache/odoo $args $addons_path $@
 }
+
+alias 'git-state'='git status; git submodule status'
