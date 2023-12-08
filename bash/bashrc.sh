@@ -36,6 +36,7 @@ __bash_main() {
     PATH+=":$1"
   }
   add_path "$JAVA_HOME/bin"
+  add_path "$HOME/.odin"
   add_path "$HOME/.ghcup/bin"
   add_path "$HOME/.cargo/bin"
   add_path "$HOME/.local/bin"
