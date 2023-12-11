@@ -18,6 +18,10 @@
 [mergetool.vimdiff]
   layout = "LOCAL,REMOTE/MERGED"
 [gui]
-  fontui = -family \"Hack Nerd Font\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
-  fontdiff = -family \"Hack Nerd Font\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
+  fontui = "-family \"Hack Nerd Font\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0"
+  fontdiff = "-family \"Hack Nerd Font\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0"
   tabsize = 2
+[credential "https://github.com"]
+	helper = !/home/nexus/.local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/home/nexus/.local/bin/gh auth git-credential
