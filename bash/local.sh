@@ -49,4 +49,8 @@ codoo() {
   $PREFIX $cmd -D $PWD/.cache/odoo $args $addons_path $@
 }
 
-alias 'git-state'='git status; git submodule status'
+vault() {
+  bash "$(cat ~/.vaultconf)/vault" "$1"
+}
+
+alias 'git-state'='git status -s; git submodule status'
