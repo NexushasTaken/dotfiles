@@ -2,6 +2,7 @@
 # vim: ft=bash
 export BASH_CONFIG_PATH=$(dirname $(realpath $BASH_SOURCE))
 __bash_main() {
+  export ANDROID_HOME=~/.android
   export PKG_CONFIG_PATH=/usr/local/pkgconfig
   export JAVA_HOME="/usr/lib/jvm/default"
   export EDITOR=nvim
@@ -41,6 +42,7 @@ __bash_main() {
   add_path "$HOME/.cargo/bin"
   add_path "$HOME/.local/bin"
   add_path "$HOME/.local/state/gem/ruby/3.0.0/bin"
+  add_path "$ANDROID_HOME/cmdline-tools/latest/bin"
 
   # bun
   export BUN_INSTALL="$HOME/.bun"
