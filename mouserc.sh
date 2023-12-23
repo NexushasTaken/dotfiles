@@ -1,3 +1,4 @@
-mouse_device=10
-xinput --set-prop "$mouse_device" 'libinput Accel Speed' -0.6
-xinput --set-prop "$mouse_device" 'libinput Accel Profile Enabled' 0 0
+mouse_device=$(cat ~/dotfiles/.mouserc.sh.inc 2> /dev/null)
+device=${mouse_device:-'USB OPTICAL MOUSE '}
+echo xinput --set-prop "$device" 'libinput Accel Speed' -0.6
+echo xinput --set-prop "$device" 'libinput Accel Profile Enabled' 0 0
