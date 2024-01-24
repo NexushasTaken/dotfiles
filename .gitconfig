@@ -2,6 +2,7 @@
   path = "~/dotfiles/.gitconfig.inc"
 [core]
   editor="nvim"
+  compression = 0
 [init]
   defaultBranch="master"
 [diff]
@@ -25,3 +26,5 @@
 	helper = !/home/nexus/.local/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = !/home/nexus/.local/bin/gh auth git-credential
+[http]
+  postBuffer = 52428800
