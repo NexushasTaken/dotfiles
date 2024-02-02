@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # vim: ft=bash
-export BASH_CONFIG_PATH=$(dirname $(realpath $BASH_SOURCE))
+export BASH_CONFIG_PATH=$HOME/.config/bash
 __bash_main() {
   export ANDROID_HOME=~/.android
   export PKG_CONFIG_PATH=/usr/local/pkgconfig

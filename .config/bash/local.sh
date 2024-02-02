@@ -4,7 +4,7 @@ alias psql="PAGER='nvim --clean -R' psql"
 codoo() {
   systemctl is-active --quiet postgresql
   [[ $? -ne 0 ]] && sudo systemctl start postgresql
-  ODOO_PATH=$HOME/odoo-dev
+  ODOO_PATH=~/odoo-dev
   local addons_path="--addons-path=$ODOO_PATH/addons,$ODOO_PATH/odoo/addons"
   local cmd='odoo'
   local args=''
