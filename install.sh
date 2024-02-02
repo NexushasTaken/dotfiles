@@ -8,11 +8,16 @@ install() {
       local packages="ttf-hack-nerd git stow tmux"
       # TODO: is there a better way to do this?
       pacman -Qq $packages > /dev/null 2> $tmp > /dev/null
-      pkgs=$(awk '/^error:/ { print substr($3, 2, 1) }' $tmp)
-      [[ -n $pkgs ]] && sudo pacman -S $pkgs
+      packages=$(awk '/^error:/ { print substr($3, 2, length($3)-2) }' $tmp)
+      echo $packages
+      [[ -n $packages ]] && sudo pacman -S $packages
       ;;
-    debian|ubuntu)
+    debian|ubuntu) # TODO: not tested
       local packages="git stow tmux" # ttf-hack-nerd ?
+      dpkg -s $packages > /dev/null 2> $tmp > /dev/null
+      packages=$(awk '/^dpkg-query:/ { print substr($3, 2, length($3)-2) }' $tmp)
+      echo $packages
+      [[ -n $packages ]] && sudo apt-get install $packages
       ;;
     *);;
   esac
