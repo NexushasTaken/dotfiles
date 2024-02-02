@@ -30,4 +30,4 @@ install() {
 }
 
 stow .
-$1 = "install" && install
+[[ $1 = "install" ]] && install
