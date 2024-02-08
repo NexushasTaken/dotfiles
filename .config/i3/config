@@ -53,6 +53,7 @@ tiling_drag modifier titlebar
 default_orientation vertical
 default_border pixel 1
 default_floating_border pixel 1
+hide_edge_borders both
 
 # Bindings {
 # Run st
