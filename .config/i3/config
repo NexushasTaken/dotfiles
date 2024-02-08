@@ -53,6 +53,7 @@ tiling_drag modifier titlebar
 default_orientation vertical
 default_border pixel 1
 default_floating_border pixel 1
+hide_edge_borders both
 
 # Bindings {
 # Run st
@@ -86,6 +87,9 @@ bindsym $mod+Shift+l move right
 # Split
 bindsym $mod+b split h
 bindsym $mod+v split v
+
+# hide i3bar
+bindsym $mod+m bar mode toggle
 
 # Fullscreen
 bindsym $mod+f fullscreen toggle
