@@ -1,4 +1,0 @@
-format = "toml"
-[edit]
-  command = "code"
-  args = ["--wait"]
