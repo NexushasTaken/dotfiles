@@ -1,5 +1,5 @@
 set print pretty on
 set debuginfod enabled off
-define hook-next
-  refresh
-end
+#define hook-next
+#  refresh
+#end

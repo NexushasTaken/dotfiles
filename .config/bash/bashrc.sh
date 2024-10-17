@@ -3,7 +3,6 @@
 export BASH_CONFIG_PATH=$HOME/.config/bash
 __bash_main() {
   export ANDROID_HOME=~/.android
-  export PKG_CONFIG_PATH=/usr/local/pkgconfig
   export JAVA_HOME="/usr/lib/jvm/default"
   export EDITOR=nvim
   export SUDO_EDITOR=$EDITOR
@@ -12,6 +11,9 @@ __bash_main() {
   export HISTCONTROL=ignoredups
   export HISTSIZE=-1
   export HISTFILESIZE=
+
+  export PKG_CONFIG_PATH="/usr/local/pkgconfig"
+  PKG_CONFIG_PATH+=":/usr/local/lib/pkgconfig"
 
   # XDG Directories
   export XDG_CONFIG_HOME=$HOME/.config
