@@ -54,7 +54,6 @@ __bash_main() {
   set -o vi
 
   alias vimrc="cd ~/.config/nvim"
-  alias cd="cd -P"
   alias x="exit"
   alias vi="nvim"
   function vif() {
