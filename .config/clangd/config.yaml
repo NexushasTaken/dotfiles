@@ -1,7 +1,17 @@
+InlayHints:
+  BlockEnd: false
+  Designators: false
+  Enabled: true
+  ParameterNames: true
+  DeducedTypes: true
+  TypeNameLimit: 24
+
 Index:
-  StandardLibrary: Yes
+  StandardLibrary: true
+
 Hover:
-  ShowAKA: True
+  ShowAKA: true
+
 CompileFlags:
   Add: [
       -Wall, -Wno-old-style-cast, -Wno-switch, -Wno-sign-conversion,
