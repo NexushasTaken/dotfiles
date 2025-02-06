@@ -11,6 +11,7 @@
 1. [i3status](https://i3wm.org/i3status) - i3 status
 1. [rustfmt](https://github.com/rust-lang/rustfmt) - Rust formatter
 1. [tmux](https://github.com/tmux/tmux) - Terminal multiplexer
+1. [kanata](https://github.com/jtroo/kanata) - Keyboard remapper
 
 # How to use
 ## Clone and install
