@@ -27,7 +27,21 @@ install() {
   [ -d $TMUX_RESURRECT ] ||
     git clone --depth 1 https://github.com/tmux-plugins/tmux-resurrect $TMUX_RESURRECT
   rm $tmp
+
+  if [[ ! -a '/etc/systemd/system/kanata.service' ]]; then
+    sudo cp -vuf ~/.config/kanata/files/kanata.service /etc/systemd/system/kanata.service
+    sudo systemctl daemon-reload
+  fi
 }
 
 stow .
+if [[ -a '/etc/kanata' && ! -h '/etc/kanata' ]]; then
+  echo "Removing '/etc/kanata'"
+  sudo rm -vf '/etc/kanata'
+  sudo ln -vsf ~/.config/kanata /etc/kanata
+fi
+if [[ ! -a '/etc/kanata' ]]; then
+  echo "Linking '/etc/kanata' -> '~/.config/kanata'"
+  sudo ln -vsf ~/.config/kanata /etc/kanata
+fi
 [[ $1 = "install" ]] && install
