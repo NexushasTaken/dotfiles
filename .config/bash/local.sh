@@ -49,4 +49,8 @@ codoo() {
   $PREFIX $cmd -D $PWD/.cache/odoo $args $addons_path $@
 }
 
+conda-activate() {
+  eval "$(/home/nexus/miniconda3/bin/conda shell.bash hook)"
+}
+
 alias 'git-state'='git status -s; git submodule status'
