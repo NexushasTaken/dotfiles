@@ -1,6 +1,6 @@
 set termguicolors
 set nocompatible
-call plug#begin('~/.vim/.plugged')
+call plug#begin(expand('$XDG_CONFIG_HOME') . '/vim/.plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'ghifarit53/tokyonight-vim'
 Plug 'sheerun/vim-polyglot'
