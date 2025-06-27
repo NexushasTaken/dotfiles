@@ -24,11 +24,19 @@ export XDG_DATA_DIRS=/usr/local/share:/usr/share
 export XDG_CONFIG_DIRS=/etc/xdg
 
 function add_path() {
-  if [[ ! -d $1 ]]; then
-    echo "$1 not found or isn't directory"
-    return 0
-  fi
-  PATH+=":$1"
+  local dir="$1"
+  [[ -d "$dir" ]] || return 0
+  case ":$PATH:" in
+    *":$dir:"*)
+      ;;  # already in PATH
+    *)
+      if [[ ! -d $dir ]]; then
+        echo "$dir not found or isn't directory"
+        return 0
+      fi
+      PATH+=":$dir"
+      ;;
+  esac
 }
 add_path "$JAVA_HOME/bin"
 add_path "$HOME/.odin"
@@ -43,5 +51,9 @@ add_path "$ANDROID_HOME/cmdline-tools/latest/bin"
 export BUN_INSTALL="$HOME/.bun"
 add_path "$BUN_INSTALL/bin"
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
-
+# ref: https://unix.stackexchange.com/questions/320465/new-tmux-sessions-do-not-source-bashrc-file
+if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
+  if [ -f "$HOME/.bashrc" ]; then
+    . $HOME/.bashrc
+  fi
+fi

@@ -6,7 +6,7 @@ if [[ $BASHRC_SOURCED ]] then
   BASHRC_SOURCED=2
   return
 fi
-export BASHRC_SOURCED=1
+BASHRC_SOURCED=1
 
 set -o vi
 
