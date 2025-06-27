@@ -138,6 +138,14 @@ function __ps1_unansi() {
 function __ps1() {
   local RETVAL=$?
 
+  # bash_status: Bash Status {
+  local bash_status
+  [[ $BASHRC_SOURCED -eq 2 ]] && bash_status+="$(__ps1_ansi red)2$(__ps1_ansi reset)"
+  if [[ ${#bash_status} -ne 0 ]]; then
+    bash_status="[$bash_status]"
+  fi
+  # }
+
   # git: Git {
   local git_state=$([[ -n $PS1_DISABLE_GIT ]] && echo "" || __git_ps1 "(%s)")
   # }
@@ -182,6 +190,6 @@ function __ps1() {
     fi
   fi
   # }
-  printf "$gas$separator$dir\n\$ "
+  printf "$bash_status$gas$separator$dir\n\$ "
 }
 PS1='$(__ps1)'

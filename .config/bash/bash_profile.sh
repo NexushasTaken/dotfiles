@@ -1,0 +1,47 @@
+# vim: ft=bash
+export BASH_CONFIG_PATH=$HOME/.config/bash
+
+export HISTCONTROL=ignoredups
+export HISTSIZE=-1
+export HISTFILESIZE=
+
+export ANDROID_HOME=~/.android
+export JAVA_HOME="/usr/lib/jvm/default"
+export EDITOR=nvim
+export SUDO_EDITOR=$EDITOR
+export VISUAL=$EDITOR
+export PAGER=less
+
+export PKG_CONFIG_PATH="/usr/local/pkgconfig"
+PKG_CONFIG_PATH+=":/usr/local/lib/pkgconfig"
+
+# XDG Directories
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_DATA_DIRS=/usr/local/share:/usr/share
+export XDG_CONFIG_DIRS=/etc/xdg
+
+function add_path() {
+  if [[ ! -d $1 ]]; then
+    echo "$1 not found or isn't directory"
+    return 0
+  fi
+  PATH+=":$1"
+}
+add_path "$JAVA_HOME/bin"
+add_path "$HOME/.odin"
+add_path "$HOME/.ghcup/bin"
+add_path "$HOME/.cargo/bin"
+add_path "$HOME/.local/bin"
+add_path "$HOME/.nimble/bin"
+add_path "$HOME/.local/state/gem/ruby/3.0.0/bin"
+add_path "$ANDROID_HOME/cmdline-tools/latest/bin"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+add_path "$BUN_INSTALL/bin"
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
