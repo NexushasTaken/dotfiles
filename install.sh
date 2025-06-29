@@ -7,7 +7,7 @@ install() {
     arch)
       local packages="ttf-hack-nerd git stow tmux"
       # TODO: is there a better way to do this?
-      pacman -Qq $packages > /dev/null 2> $tmp > /dev/null
+      sudo pacman -Qq $packages > /dev/null 2> $tmp > /dev/null
       packages=$(awk '/^error:/ { print substr($3, 2, length($3)-2) }' $tmp)
       echo $packages
       [[ -n $packages ]] && sudo pacman -S $packages
@@ -35,13 +35,11 @@ install() {
 }
 
 stow .
-if [[ -a '/etc/kanata' && ! -h '/etc/kanata' ]]; then
-  echo "Removing '/etc/kanata'"
-  sudo rm -vf '/etc/kanata'
-  sudo ln -vsf ~/.config/kanata /etc/kanata
-fi
-if [[ ! -a '/etc/kanata' ]]; then
-  echo "Linking '/etc/kanata' -> '~/.config/kanata'"
-  sudo ln -vsf ~/.config/kanata /etc/kanata
-fi
-[[ $1 = "install" ]] && install
+case $1 in
+  install)
+    install
+    ;;
+  *)
+    echo "$0 [install]"
+    ;;
+esac

@@ -38,6 +38,7 @@ function add_path() {
       ;;
   esac
 }
+add_path "$ANDROID_HOME/cmdline-tools/latest/bin"
 add_path "$JAVA_HOME/bin"
 add_path "$HOME/.odin"
 add_path "$HOME/.ghcup/bin"
@@ -45,7 +46,6 @@ add_path "$HOME/.cargo/bin"
 add_path "$HOME/.local/bin"
 add_path "$HOME/.nimble/bin"
 add_path "$HOME/.local/state/gem/ruby/3.0.0/bin"
-add_path "$ANDROID_HOME/cmdline-tools/latest/bin"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

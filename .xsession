@@ -1,5 +1,6 @@
 # vi: ft=sh
 source ~/.config/xorg/displayrc.sh
+source ~/mouserc.sh
 
 xset -dpms # Disable Display Power Management
 xset b off # Turn off bell

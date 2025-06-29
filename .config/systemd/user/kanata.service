@@ -3,9 +3,9 @@ Description=Kanata keyboard remapper
 Documentation=https://github.com/jtroo/kanata
 
 [Service]
-Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
+#Environment=PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin
 Type=simple
-ExecStart=kanata --cfg /etc/kanata/config.kbd
+ExecStart=/home/nexus/.local/bin/kanata --cfg /.config/kanata/config.kbd
 Restart=on-failure
 
 [Install]
