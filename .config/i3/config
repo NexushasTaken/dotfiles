@@ -200,3 +200,5 @@ title_align center
 
 for_window [all] title_window_icon on
 for_window [all] title_window_icon padding 2
+for_window [floating] border normal
+
