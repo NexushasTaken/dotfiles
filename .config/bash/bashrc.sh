@@ -22,6 +22,7 @@ alias ln="ln -v"
 alias make="make -j 2"
 alias gdb="gdb -q"
 alias paruz-yay="PARUZ=yay paruz"
+alias paruz-paru="PARUZ=paru paruz"
 
 exaflags="--classify --extended --color-scale --icons --group-directories-first --group --sort=type"
 alias e="exa $exaflags"
