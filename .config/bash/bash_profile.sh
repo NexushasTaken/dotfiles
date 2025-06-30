@@ -5,6 +5,7 @@ export HISTCONTROL=ignoredups
 export HISTSIZE=-1
 export HISTFILESIZE=
 
+export W3M_DIR=~/.config/w3m
 export ANDROID_HOME=~/.android
 export JAVA_HOME="/usr/lib/jvm/default"
 export EDITOR=nvim
