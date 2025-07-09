@@ -6,3 +6,4 @@
 # for a list of all available themes
 --theme="Solarized (dark)"
 --number
+--tabs 2

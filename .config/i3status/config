@@ -50,7 +50,7 @@ memory {
 }
 
 volume master {
-  format = " %volume"
+  format = "  %volume"
   format_muted = "󰝟 muted (%volume)"
   device = "default"
   mixer = "Master"
@@ -58,5 +58,5 @@ volume master {
 }
 
 tztime local {
-  format = "%a %b %d %G %H:%M:%S %p"
+  format = "%a %b %d %G %r"
 }
