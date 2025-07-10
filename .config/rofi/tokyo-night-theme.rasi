@@ -3,35 +3,36 @@
  * Rofi version: 1.7.9.1
  **/
 * {
-    red:                         rgba ( 220, 50, 47, 100 % );
+    red:                         rgba ( 247, 118, 142, 100% );       // $red
     selected-active-foreground:  var(background);
-    lightfg:                     rgba ( 88, 104, 117, 100 % );
+    lightfg:                     rgba ( 169, 177, 214, 100% );       // $fg_dark
     separatorcolor:              var(foreground);
     urgent-foreground:           var(red);
     alternate-urgent-background: var(lightbg);
-    lightbg:                     rgba ( 238, 232, 213, 100 % );
+    lightbg:                     rgba ( 41, 46, 66, 100% );          // $bg_highlight
     background-color:            transparent;
     border-color:                var(foreground);
     normal-background:           var(background);
     selected-urgent-background:  var(red);
     alternate-active-background: var(lightbg);
     spacing:                     2;
-    blue:                        rgba ( 38, 139, 210, 100 % );
+    blue:                        rgba ( 122, 162, 247, 100% );       // $blue
     alternate-normal-foreground: var(foreground);
     urgent-background:           var(background);
     selected-normal-foreground:  var(lightbg);
     active-foreground:           var(blue);
-    background:                  rgba ( 253, 246, 227, 100 % );
+    background:                  rgba ( 26, 27, 38, 100% );          // $bg
     selected-active-background:  var(blue);
     active-background:           var(background);
     selected-normal-background:  var(lightfg);
     alternate-normal-background: var(lightbg);
-    foreground:                  rgba ( 0, 43, 54, 100 % );
+    foreground:                  rgba ( 192, 202, 245, 100% );       // $fg
     selected-urgent-foreground:  var(background);
     normal-foreground:           var(foreground);
     alternate-urgent-foreground: var(red);
     alternate-active-foreground: var(blue);
 }
+
 element {
     padding: 1px ;
     cursor:  pointer;
