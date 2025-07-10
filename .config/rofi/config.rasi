@@ -1,5 +1,5 @@
 configuration {
-  modes: "window,drun,run,ssh,windowcd,combi,keys,filebrowser,recursivebrowser";
+  modes: "window,drun,run,ssh,combi,filebrowser,recursivebrowser,windowcd,keys";
   font: "Hack Nerd Font 10";
 /*  location: 0;*/
 /*  yoffset: 0;*/
@@ -13,7 +13,7 @@ configuration {
 /*  on-menu-canceled: ;*/
 /*  on-menu-error: ;*/
 /*  on-screenshot-taken: ;*/
-/*  terminal: "rofi-sensible-terminal";*/
+  terminal: "kitty";
 /*  ssh-client: "ssh";*/
 /*  ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
 /*  run-command: "{cmd}";*/
@@ -30,12 +30,12 @@ configuration {
 /*  drun-url-launcher: "xdg-open";*/
 /*  disable-history: false;*/
 /*  ignored-prefixes: "";*/
-/*  sort: false;*/
-/*  sorting-method: "normal";*/
+  sort: true;
+  sorting-method: "fzf";
 /*  case-sensitive: false;*/
 /*  case-smart: false;*/
 /*  cycle: true;*/
-/*  sidebar-mode: false;*/
+  sidebar-mode: true;
 /*  hover-select: false;*/
 /*  eh: 1;*/
 /*  auto-select: false;*/
@@ -50,7 +50,7 @@ configuration {
 /*  threads: 0;*/
 /*  scroll-method: 0;*/
 /*  window-format: "{w}    {c}   {t}";*/
-/*  click-to-exit: true;*/
+  click-to-exit: false;
 /*  max-history-size: 25;*/
 /*  combi-hide-mode-prefix: false;*/
 /*  combi-display-format: "{mode} {text}";*/
