@@ -42,30 +42,17 @@ exec --no-startup-id systemctl start --user i3-session.service
 exec --no-startup-id xsettingsd
 #exec --no-startup-id picom
 
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+#############         Bindings           ##################
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# kill focused window
+bindsym $mod+Shift+c kill
 
-# Bindings {
 # Run st
 #bindsym Shift+mod1+t exec st
 bindsym Shift+mod1+t exec kitty
 
-# Close window
-bindsym $mod+Shift+c kill
-
 # Select window to close
 bindsym --release $mod+Shift+x exec --no-startup-id xkill
-
-# Scrot
-set $scrot_cmd ~/Pictures/Screenshots/scrot_%a-%b-%d-%G_%H:%M:%S.png -e 'optipng $f' -q 100 -p
-bindsym --release Print exec --no-startup-id scrot $scrot_cmd
-bindsym --release Shift+Print exec --no-startup-id scrot $scrot_cmd -s
 
 # Run dmenu
 #bindsym $mod+p exec --no-startup-id dmenu_run -fn 'Hack Nerd Font:pixelsize=10' -nb '#1a1b26' -nf '#c0caf5' -sf '#c0caf5'
@@ -73,47 +60,30 @@ bindsym $mod+p exec --no-startup-id rofi -show run
 bindsym $mod+Shift+p exec --no-startup-id rofi -show drun
 bindsym $mod+w exec --no-startup-id rofi -show window
 
-# change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-# move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# Split
-bindsym $mod+b split h
-bindsym $mod+v split v
-
 # hide i3bar
 bindsym $mod+m bar mode toggle
 
-# Fullscreen
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+t layout tabbed
-bindsym $mod+Shift+s layout toggle split
-
-# Toggle floating for current window
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# Reload the config
-bindsym $mod+Shift+r reload
 # Restart i3
 bindsym $mod+Shift+e restart
+
 # Exit i3
 bindsym $mod+Shift+q exec --no-startup-id "i3-nagbar -f 'pango:Hack Nerd Font' -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
+
+# Scrot
+set $scrot_cmd ~/Pictures/Screenshots/scrot_%a-%b-%d-%G_%H:%M:%S.png -e 'optipng $f' -q 100 -p
+bindsym --release Print exec --no-startup-id scrot $scrot_cmd
+bindsym --release Shift+Print exec --no-startup-id scrot $scrot_cmd -s
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Reload the configuration file
+bindsym $mod+Shift+r reload
+
+###########          Workspace Bindings          ###############
 
 # Variables for workspaces
 set $ws1 "1"
@@ -151,6 +121,31 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+############      Container/Window control  ############
+
+# Toggle floating for current window
+bindsym $mod+Shift+space floating toggle
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focus to the parent container
+bindsym $mod+a focus parent
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
   # These bindings trigger as soon as you enter the resize mode
@@ -162,9 +157,38 @@ mode "resize" {
   # back to normal: Enter or Escape or $mod+r
   bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
-# }
+
+# layout toggle
+bindsym $mod+Shift+s layout toggle split
+
+# container layout
+bindsym $mod+b split h
+bindsym $mod+v split v
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+
+default_orientation vertical
+
+# make the current focus fullscreen
+bindsym $mod+f fullscreen toggle
+
+############    application settings   ############
+
+# move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+tiling_drag modifier titlebar
+default_border pixel 1
+default_floating_border pixel 1
+hide_edge_borders both
+focus_follows_mouse yes
+title_align center
+
+for_window [all] title_window_icon on
+for_window [all] title_window_icon padding 2
+for_window [floating] border normal
+
+###########     i3bar     ###########
 
 # Start i3bar
 bar {
@@ -194,18 +218,4 @@ bar {
 #client.placeholder      #000000  #0c0c0c      #ffffff #000000     #0c0c0c
 
 #client.background       #ffffff
-
-# move tiling windows via drag & drop by left-clicking into the title bar,
-# or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
-default_orientation vertical
-default_border pixel 1
-default_floating_border pixel 1
-hide_edge_borders both
-focus_follows_mouse yes
-title_align center
-
-for_window [all] title_window_icon on
-for_window [all] title_window_icon padding 2
-for_window [floating] border normal
 

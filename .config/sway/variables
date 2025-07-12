@@ -1,0 +1,5 @@
+set $term kitty
+set $browser firefox
+set $filemanager caja
+set $editor nvim
+set $exit nwg-bar -p center -a middle -i 48
