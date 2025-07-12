@@ -1,3 +1,3 @@
 # vi: ft=sh
-source ~/.xinitrc
+source ~/.xsession
 exec i3
