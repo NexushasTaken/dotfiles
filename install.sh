@@ -22,7 +22,7 @@ install() {
 
   case $ID in
     arch)
-      local packages="ttf-hack-nerd git stow tmux dunst kitty dex rofi"
+      local packages="ttf-hack-nerd git stow tmux dunst kitty dex rofi clipton"
       # TODO: is there a better way to do this?
       sudo pacman -Qq $packages > /dev/null 2> $tmp > /dev/null
       packages=$(awk '/^error:/ { print substr($3, 2, length($3)-2) }' $tmp)
