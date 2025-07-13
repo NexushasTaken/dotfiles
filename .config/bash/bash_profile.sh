@@ -25,7 +25,7 @@ export XDG_DATA_DIRS=/usr/local/share:/usr/share
 export XDG_CONFIG_DIRS=/etc/xdg
 
 # QT
-export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_QPA_PLATFORMTHEME=kvantum
 
 function add_path() {
   local dir="$1"
