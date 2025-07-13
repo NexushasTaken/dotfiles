@@ -1,8 +1,25 @@
 #!/usr/bin/env bash
+clone() {
+  local url=$1
+  shift
+  local path=$1
+  shift
+
+  if [[ ! -d $path ]]; then
+    mkdir -p $(dirname $path)
+    git clone --depth 1 "$url" "$path" $@
+  fi
+}
+
+git-clone() {
+  clone https://github.com/Jazqa/adwaita-tweaks.git $HOME/.themes/'Adwaita Tweaks Dark' -b dark
+  clone https://github.com/tmux-plugins/tmux-resurrect $HOME/.config/tmux/plugins/tmux-resurrect
+}
+
 install() {
   source /etc/os-release
   local tmp=$(mktemp)
-  
+
   case $ID in
     arch)
       local packages="ttf-hack-nerd git stow tmux dunst kitty dex rofi"
@@ -22,10 +39,8 @@ install() {
     *);;
   esac
 
-  # Tmux
-  TMUX_RESURRECT=$HOME/.config/tmux/plugins/tmux-resurrect
-  [ -d $TMUX_RESURRECT ] ||
-    git clone --depth 1 https://github.com/tmux-plugins/tmux-resurrect $TMUX_RESURRECT
+  git-clone
+
   rm $tmp
 
   if [[ ! -a '/etc/systemd/system/kanata.service' ]]; then
@@ -39,7 +54,10 @@ case $1 in
   install)
     install
     ;;
+  clone)
+    git-clone
+    ;;
   *)
-    echo "$0 [install]"
+    echo "$0 [install|clone]"
     ;;
 esac
