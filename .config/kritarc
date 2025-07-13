@@ -42,9 +42,9 @@ Krita/Ocio/OcioConfigPath=
 Krita/Ocio/OcioLockColorVisualRepresentation=false
 Krita/Ocio/OcioLutPath=
 Krita/Ocio/UseOcio=false
-LastBackGroundColor=<!DOCTYPE LastBackGroundColor>\n<LastBackGroundColor>\n <RGB g="0.490196079015732" space="sRGB-elle-V2-srgbtrc.icc" b="0.490196079015732" r="0.490196079015732"/>\n</LastBackGroundColor>\n
+LastBackGroundColor=<!DOCTYPE LastBackGroundColor>\n<LastBackGroundColor>\n <RGB r="0.490196079015732" b="0.490196079015732" g="0.490196079015732" space="sRGB-elle-V2-srgbtrc.icc"/>\n</LastBackGroundColor>\n
 LastEraser_0=a) Eraser Circle
-LastForeGroundColor=<!DOCTYPE LastForeGroundColor>\n<LastForeGroundColor>\n <RGB g="0" space="sRGB-elle-V2-srgbtrc.icc" b="0" r="0"/>\n</LastForeGroundColor>\n
+LastForeGroundColor=<!DOCTYPE LastForeGroundColor>\n<LastForeGroundColor>\n <RGB r="0" b="0" g="0" space="sRGB-elle-V2-srgbtrc.icc"/>\n</LastForeGroundColor>\n
 LastPreset=c) Pencil-2
 LastPreset_-1=c) Pencil-2
 LineSmoothingDelayDistance=24
@@ -147,6 +147,7 @@ hideScrollbarsFullScreen=true
 hideStatusbarFullScreen=true
 hideTitleBarFullscreen=true
 hideToolbarFullscreen=true
+ignoreHighFunctionKeys=true
 imageHeightDef=3508
 imageResolutionDef=600
 imageWidthDef=2480
@@ -157,7 +158,7 @@ logviewer_enabled=false
 maxAllowedSpeedValue=93
 maxSwapSize=4096
 maximumBrushSize=1000
-mdiBackgroundColorXML=<!DOCTYPE color>\n<color channeldepth="U16">\n <RGB b="0" g="0" space="sRGB-elle-V2-g10.icc" r="0"/>\n</color>\n
+mdiBackgroundColorXML=<!DOCTYPE color>\n<color channeldepth="U16">\n <RGB r="0" space="sRGB-elle-V2-g10.icc" g="0" b="0"/>\n</color>\n
 mdiBackgroundImage=
 mdi_rubberband=1
 mdi_viewmode=0
