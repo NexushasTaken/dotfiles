@@ -43,6 +43,7 @@ exec --no-startup-id xsettingsd
 exec --no-startup-id udiskie --tray
 exec --no-startup-id volctl
 exec --no-startup-id picom
+exec --no-startup-id clipton watcher
 
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
