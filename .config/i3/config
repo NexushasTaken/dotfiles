@@ -42,7 +42,6 @@ exec --no-startup-id systemctl start --user i3-session.service
 exec --no-startup-id xsettingsd
 exec --no-startup-id udiskie --tray
 exec --no-startup-id volctl
-exec --no-startup-id clipcatd --no-daemon
 exec --no-startup-id picom
 
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -78,6 +77,7 @@ bindsym $mod+p exec --no-startup-id rofi -show run
 bindsym $mod+Shift+p exec --no-startup-id rofi -show drun
 bindsym $mod+w exec --no-startup-id rofi -show window
 bindsym $mod+c exec --no-startup-id rofi -show calc
+bindsym $mod+Shift+v exec --no-startup-id clipton
 
 # change focus
 bindsym $mod+h focus left
@@ -110,9 +110,6 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
 
 # Reload the config
 bindsym $mod+Shift+r reload
