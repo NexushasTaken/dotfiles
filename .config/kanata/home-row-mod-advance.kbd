@@ -89,7 +89,7 @@
   @a  @s  @d  @f  h   @j  @k  @l  @;
   @spc
   spc XX
-  lalt (layer-switch default)
+  lctl (layer-switch default)
   XX XX
   @arrows @wheels
   XX XX XX XX
