@@ -34,22 +34,22 @@ set $mod Mod4
 # Font
 font pango:Hack Nerd Font 8
 
-exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id nm-applet
-exec --no-startup-id lxpolkit0
-exec --no-startup-id systemctl start --user i3-session.service
-exec --no-startup-id xsettingsd
-exec --no-startup-id udiskie --tray
-exec --no-startup-id volctl
-exec --no-startup-id picom
-exec --no-startup-id clipton watcher
+exec dex --autostart --environment i3
+exec xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec nm-applet
+exec lxpolkit0
+exec systemctl start --user i3-session.service
+exec xsettingsd
+exec udiskie --tray
+exec volctl
+exec picom
+exec clipton watcher
 
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -63,22 +63,22 @@ bindsym Shift+mod1+t exec kitty
 bindsym $mod+Shift+c kill
 
 # Select window to close
-bindsym --release $mod+Shift+x exec --no-startup-id xkill
+bindsym --release $mod+Shift+x exec xkill
 
 # Scrot
 #set $scrot_cmd ~/Pictures/Screenshots/scrot_%a-%b-%d-%G_%H:%M:%S.png -e 'optipng $f' -q 100 -p
-#bindsym --release Print exec --no-startup-id scrot $scrot_cmd
-#bindsym --release Shift+Print exec --no-startup-id scrot $scrot_cmd -s
-bindsym --release Print exec --no-startup-id flameshot gui
-bindsym --release Shift+Print exec --no-startup-id flameshot full
+#bindsym --release Print exec scrot $scrot_cmd
+#bindsym --release Shift+Print exec scrot $scrot_cmd -s
+bindsym --release Print exec flameshot gui
+bindsym --release Shift+Print exec flameshot full
 
 # Run dmenu
-#bindsym $mod+p exec --no-startup-id dmenu_run -fn 'Hack Nerd Font:pixelsize=10' -nb '#1a1b26' -nf '#c0caf5' -sf '#c0caf5'
-bindsym $mod+p exec --no-startup-id rofi -show run
-bindsym $mod+Shift+p exec --no-startup-id rofi -show drun
-bindsym $mod+w exec --no-startup-id rofi -show window
-bindsym $mod+c exec --no-startup-id rofi -show calc
-bindsym $mod+Shift+v exec --no-startup-id clipton
+#bindsym $mod+p exec dmenu_run -fn 'Hack Nerd Font:pixelsize=10' -nb '#1a1b26' -nf '#c0caf5' -sf '#c0caf5'
+bindsym $mod+p exec rofi -show run
+bindsym $mod+Shift+p exec rofi -show drun
+bindsym $mod+w exec rofi -show window
+bindsym $mod+c exec rofi -show calc
+bindsym $mod+Shift+v exec clipton
 
 # change focus
 bindsym $mod+h focus left
@@ -117,7 +117,8 @@ bindsym $mod+Shift+r reload
 # Restart i3
 bindsym $mod+Shift+e restart
 # Exit i3
-bindsym $mod+Shift+q exec --no-startup-id "i3-nagbar -f 'pango:Hack Nerd Font' -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
+#bindsym $mod+Shift+q exec "i3-nagbar -f 'pango:Hack Nerd Font' -t warning -m 'Exit?' -B 'Yes' 'i3-msg exit'"
+bindsym $mod+Shift+q exec i3-msg exit
 
 # Variables for workspaces
 set $ws1 "1"
