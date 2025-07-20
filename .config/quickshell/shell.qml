@@ -41,7 +41,7 @@ ShellRoot {
               flat: true
               padding: 0
               contentItem: Text {
-                text: ""
+                text: Icons.osIcon
                 color: control.down ? "#7aa2f7" : "#7dcfff"
                 font.family: "Hack Nerd Font"
                 font.pointSize: 16
