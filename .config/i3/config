@@ -91,6 +91,8 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+bindsym $mod+a focus parent
+
 # Split
 bindsym $mod+b split h
 bindsym $mod+v split v
