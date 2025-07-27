@@ -38,7 +38,7 @@ function add_path() {
         echo "$dir not found or isn't directory"
         return 0
       fi
-      PATH+=":$dir"
+      export PATH="$dir:$PATH"
       ;;
   esac
 }
