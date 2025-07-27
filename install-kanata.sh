@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
+set -e
+
 install() {
   local kanata_bin="$HOME/.local/bin/kanata"
   if [[ ! -x $kanata_bin ]]; then
+    mkdir -p $(dirname "$kanata_bin")
     wget https://github.com/jtroo/kanata/releases/download/v1.9.0/kanata -O "$kanata_bin"
     chmod +x "$kanata_bin"
   fi
