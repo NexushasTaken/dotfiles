@@ -37,7 +37,7 @@ font pango:Hack Nerd Font 8
 exec dex --autostart --environment i3
 exec xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec nm-applet
-exec lxpolkit0
+exec lxpolkit
 exec systemctl start --user i3-session.service
 exec xsettingsd
 exec udiskie --tray
