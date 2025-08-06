@@ -18,7 +18,7 @@ git-clone() {
   clone https://github.com/Jazqa/adwaita-tweaks.git $HOME/.themes/'Adwaita Tweaks Dark' -b dark
   clone https://github.com/tmux-plugins/tmux-resurrect $HOME/.config/tmux/plugins/tmux-resurrect
   clone https://github.com/vinceliuice/Fluent-gtk-theme $HOME/.local/share/themes/.temp/Fluent-gtk-theme
-  clone https://github.com/vinceliuice/Fluent-icon-theme $HOME/.local/share/icons/.temp/Fluent-icon-theme
+  clone https://github.com/cbrnix/Flatery $HOME/.local/share/icons/.temp/Flatery
 }
 
 install() {
@@ -60,8 +60,8 @@ install() {
     popd
   fi
 
-  if [[ -d "$HOME/.local/share/icons/.temp/Fluent-icon-theme" ]]; then
-    pushd ~/.local/share/themes/.temp/Fluent-icon-theme
+  if [[ -d "$HOME/.local/share/icons/.temp/Flatery" ]]; then
+    pushd $HOME/.local/share/icons/.temp/Flatery
       ./install.sh
     popd
   fi
