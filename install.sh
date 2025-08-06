@@ -4,18 +4,21 @@ set -e
 clone() {
   local url=$1
   shift
-  local path=$1
+  local path=$2
   shift
 
   if [[ ! -d $path ]]; then
     mkdir -p $(dirname $path)
     git clone --depth 1 "$url" "$path" $@
   fi
+  echo "$path"
 }
 
 git-clone() {
   clone https://github.com/Jazqa/adwaita-tweaks.git $HOME/.themes/'Adwaita Tweaks Dark' -b dark
   clone https://github.com/tmux-plugins/tmux-resurrect $HOME/.config/tmux/plugins/tmux-resurrect
+  clone https://github.com/vinceliuice/Fluent-gtk-theme $HOME/.local/share/themes/.temp/Fluent-gtk-theme
+  clone https://github.com/vinceliuice/Fluent-icon-theme $HOME/.local/share/icons/.temp/Fluent-icon-theme
 }
 
 install() {
@@ -49,6 +52,18 @@ install() {
   if [[ ! -a '/etc/systemd/system/kanata.service' ]]; then
     sudo cp -vuf ~/.config/kanata/files/kanata.service /etc/systemd/system/kanata.service
     sudo systemctl daemon-reload
+  fi
+
+  if [[ -d "$HOME/.local/share/themes/.temp/Fluent-gtk-theme" ]]; then
+    pushd ~/.local/share/themes/.temp/Fluent-gtk-theme
+      ./install.sh -t all -c dark -s compact -i arch --tweaks square
+    popd
+  fi
+
+  if [[ -d "$HOME/.local/share/icons/.temp/Fluent-icon-theme" ]]; then
+    pushd ~/.local/share/themes/.temp/Fluent-icon-theme
+      ./install.sh
+    popd
   fi
 }
 
