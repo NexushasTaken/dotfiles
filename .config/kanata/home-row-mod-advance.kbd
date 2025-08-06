@@ -11,7 +11,7 @@
   esc caps
   `   1   2   3   4   5   6   7   8   9   0   -   =
   q   w   e   r   t   y   u   i   o   p   [   ]   \
-  a   s   d   f   h   j   k   l   ;
+  a   s   d   f   h   j   k   l   ;   '
   spc
   lsft rsft
   lctl rctl
@@ -86,7 +86,7 @@
   caps esc
   XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX
   q   w   e   r   t   y   u   i   o   p   [   ]   \
-  @a  @s  @d  @f  h   @j  @k  @l  @;
+  @a  @s  @d  @f  h   @j  @k  @l  @;  '
   @spc
   spc XX
   lctl (layer-switch default)
@@ -99,7 +99,7 @@
   caps esc
   XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX
   q   w   e   r   t   y   u   i   o   p   [   ]   \
-  a   s   d   f   h   j   k   l   ;
+  a   s   d   f   h   j   k   l   ;   '
   spc
   XX XX
   XX XX
@@ -112,7 +112,7 @@
   caps esc
   XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX
   1   2   3   4   5   6   7   8   9   0   -   =   `
-  @a  @s  @d  @f  h   @j  @k  @l  @;
+  @a  @s  @d  @f  h   @j  @k  @l  @;  bspc
   spc
   XX XX
   XX (layer-switch default)
@@ -125,7 +125,7 @@
   caps esc
   XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX
   q   w   e   r   t   y   u   i   o   p   [   ]   \
-  @a  @s  @d  @f  left down up right ;
+  @a  @s  @d  @f  left down up right  ;   '
   spc
   XX XX
   XX (layer-switch default)
@@ -138,7 +138,7 @@
   caps esc
   XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX  XX
   q   w   e   r   t   y   u   i   o   p   [   ]   \
-  @a  @s  @d  @f  @mwl @mwd @mwu @mwr ;
+  @a  @s  @d  @f  @mwl @mwd @mwu @mwr ;   '
   spc
   XX XX
   XX (layer-switch default)
@@ -151,7 +151,7 @@
   caps esc
   `   1   2   3   4   5   6   7   8   9   0   -   =
   q   w   e   r   t   y   u   i   o   p   [   ]   \
-  a   s   d   f   h   j   k   l   ;
+  a   s   d   f   h   j   k   l   ;   '
   spc
   lsft rsft
   lctl (layer-switch base)
