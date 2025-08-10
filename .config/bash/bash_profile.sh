@@ -47,6 +47,9 @@ function add_path() {
   esac
 }
 add_path "$ANDROID_HOME/cmdline-tools/latest/bin"
+add_path "$ANDROID_HOME/tools"
+add_path "$ANDROID_HOME/tools/bin"
+add_path "$ANDROID_HOME/platform-tools"
 add_path "$JAVA_HOME/bin"
 add_path "$HOME/.odin"
 add_path "$HOME/.ghcup/bin"
