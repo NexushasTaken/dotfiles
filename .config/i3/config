@@ -57,7 +57,7 @@ floating_modifier $mod
 # Bindings {
 # Run st
 #bindsym Shift+mod1+t exec st
-bindsym Shift+mod1+t exec kitty
+bindsym Shift+mod1+t exec alacritty
 
 # Close window
 bindsym $mod+Shift+c kill

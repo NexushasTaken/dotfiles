@@ -27,7 +27,7 @@ install() {
 
   case $ID in
     arch)
-      local packages="ttf-hack-nerd git stow tmux dunst kitty dex rofi"
+      local packages="ttf-hack-nerd git stow tmux dunst alacritty dex rofi"
       local aur_packages="phinger-cursors"
       # TODO: is there a better way to do this?
       sudo pacman -Qq $packages > /dev/null 2> $tmp > /dev/null
