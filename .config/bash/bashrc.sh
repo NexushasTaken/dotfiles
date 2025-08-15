@@ -23,6 +23,9 @@ alias make="make -j 2"
 alias gdb="gdb -q"
 alias paruz-yay="PARUZ=yay paruz"
 alias paruz-paru="PARUZ=paru paruz"
+if [[ -n "$ANDROID_HOME" && -d "$ANDROID_HOME" ]]; then
+  alias sdkmanager="sdkmanager --sdk_root=$ANDROID_HOME"
+fi
 
 exaflags="--classify --extended --color-scale --icons --group-directories-first --group --sort=type"
 alias e="exa $exaflags"
