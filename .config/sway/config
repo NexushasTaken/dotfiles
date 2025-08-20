@@ -32,7 +32,7 @@ set $blue7 #394b70
 
 set $mod Mod4
 # Font
-font pango:Hack Nerd Font 8
+font pango:Noto Sans 7
 
 exec dex --autostart --environment i3
 exec xss-lock --transfer-sleep-lock -- i3lock --nofork
@@ -57,7 +57,7 @@ floating_modifier $mod
 # Bindings {
 # Run st
 #bindsym Shift+mod1+t exec st
-bindsym Shift+mod1+t exec alacritty
+bindsym Shift+mod1+t exec kitty
 
 # Close window
 bindsym $mod+Shift+c kill
@@ -175,9 +175,8 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar
 bar {
-  font pango:Hack Nerd Font 8
+  font pango:Hack Nerd Font 7
   position top
-  padding -1px 4px -1px 0px
   status_command i3status
   separator_symbol ""
 #  colors {
@@ -203,16 +202,29 @@ bar {
 
 #client.background       #ffffff
 
+input type:keyboard {
+  repeat_delay 300
+  repeat_rate 20
+}
+
+input type:pointer {
+  accel_profile flat
+  pointer_accel -0.4
+  middle_emulation enabled
+}
+
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
-tiling_drag modifier titlebar
+tiling_drag enabled
 default_orientation vertical
 default_border pixel 1
 default_floating_border pixel 1
 hide_edge_borders both
 focus_follows_mouse yes
 title_align center
+titlebar_padding 3
 
 for_window [all] title_window_icon on
 for_window [all] title_window_icon padding 2
 for_window [floating] border normal
+

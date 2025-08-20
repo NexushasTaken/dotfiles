@@ -27,6 +27,10 @@ export XDG_CONFIG_DIRS=/etc/xdg
 # QT
 export QT_QPA_PLATFORMTHEME=kvantum
 
+export XCURSOR_SIZE=16
+export HYPRCURSOR_SIZE=16
+export GDK_DPI_SCALE=0.8
+
 function add_path() {
   local dir="$1"
   [[ -d "$dir" ]] || return 0
@@ -43,6 +47,9 @@ function add_path() {
   esac
 }
 add_path "$ANDROID_HOME/cmdline-tools/latest/bin"
+add_path "$ANDROID_HOME/tools"
+add_path "$ANDROID_HOME/tools/bin"
+add_path "$ANDROID_HOME/platform-tools"
 add_path "$JAVA_HOME/bin"
 add_path "$HOME/.odin"
 add_path "$HOME/.ghcup/bin"
