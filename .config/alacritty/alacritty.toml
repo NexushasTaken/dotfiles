@@ -11,10 +11,10 @@ dynamic_padding = true
 history = 0
 
 [font]
-#normal = { family = "Hack Nerd Font", style = "Regular" }
+normal = { family = "Hack Nerd Font", style = "Regular" }
 #normal = { family = "Iosevka Nerd Font", style = "Regular" }
 #normal = { family = "FiraCode Nerd Font", style = "Regular" }
-normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+#normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
 size = 9
 
 [cursor]
