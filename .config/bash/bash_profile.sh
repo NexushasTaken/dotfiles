@@ -63,6 +63,10 @@ add_path "$HOME/.dvm/bin/"
 export BUN_INSTALL="$HOME/.bun"
 add_path "$BUN_INSTALL/bin"
 
+use_local_bin() {
+  export PATH="/usr/local/bin:$PATH"
+}
+
 # ref: https://unix.stackexchange.com/questions/320465/new-tmux-sessions-do-not-source-bashrc-file
 if [ -n "$BASH_VERSION" -a -n "$PS1" ]; then
   if [ -f "$HOME/.bashrc" ]; then
