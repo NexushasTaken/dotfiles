@@ -1,5 +1,5 @@
 configuration {
-  modes: "calc,window,drun,run,ssh,combi,filebrowser,recursivebrowser,windowcd,keys";
+  modes: "calc,window,drun,run,ssh,combi,filebrowser,recursivebrowser,keys";
   font: "Hack Nerd Font 10";
 /*  location: 0;*/
 /*  yoffset: 0;*/
