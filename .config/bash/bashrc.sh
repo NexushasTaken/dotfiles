@@ -74,6 +74,12 @@ download() {
   local bin="curl"
   local bin_fmt
   local url out
+  local verbose=""
+
+  if [[ $1 == "-v" ]]; then
+    verbose="verbose"
+    shift
+  fi
 
   # Detect which tool to use
   if [[ "$1" == "-curl" ]]; then
@@ -88,17 +94,25 @@ download() {
   url="$1"
   out="$2"
 
+  shift 2
+
   if [[ -z "$url" || -z "$out" ]]; then
     echo "Usage: download [-curl|-wget] <url> <output>"
     return 1
   fi
 
   if [[ "$bin" == "curl" ]]; then
-    # -L follow redirects, -C - resume, -f fail silently on HTTP errors, -o output
+    if [[ -n "$verbose" ]]; then
+      set -x
+    fi
     "$bin" -L -C - -f -o "$out" "$url" $@
+    set +x
   else
-    # wget: -c continue, -O output
+    if [[ -n "$verbose" ]]; then
+      set -x
+    fi
     "$bin" --passive-ftp -c -O "$out" "$url" $@
+    set +x
   fi
 }
 
