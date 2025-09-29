@@ -70,6 +70,38 @@ function mkcd() {
   mkdir $1 && cd $1
 }
 
+download() {
+  local bin="curl"
+  local bin_fmt
+  local url out
+
+  # Detect which tool to use
+  if [[ "$1" == "-curl" ]]; then
+    bin="curl"
+    shift
+  elif [[ "$1" == "-wget" ]]; then
+    bin="wget"
+    shift
+  fi
+
+  # Get URL and output
+  url="$1"
+  out="$2"
+
+  if [[ -z "$url" || -z "$out" ]]; then
+    echo "Usage: download [-curl|-wget] <url> <output>"
+    return 1
+  fi
+
+  if [[ "$bin" == "curl" ]]; then
+    # -L follow redirects, -C - resume, -f fail silently on HTTP errors, -o output
+    "$bin" -L -C - -f -o "$out" "$url" $@
+  else
+    # wget: -c continue, -O output
+    "$bin" --passive-ftp -c -O "$out" "$url" $@
+  fi
+}
+
 alias clear="clear-tmux"
 alias c="clear-tmux"
 alias cr="clear-reset"
