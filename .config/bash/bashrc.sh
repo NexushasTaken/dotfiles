@@ -128,3 +128,7 @@ for file in $(exa $BASH_CONFIG_PATH/completions); do
   source $BASH_CONFIG_PATH/completions/$file
 done
 
+export BASH_NIX_PROFILE=$HOME/.nix-profile/etc/profile.d/nix.sh
+if [ -e "${BASH_NIX_PROFILE}" ]; then
+  source "${BASH_NIX_PROFILE}";
+fi
