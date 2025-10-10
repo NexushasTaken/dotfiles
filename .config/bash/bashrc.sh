@@ -132,3 +132,40 @@ export BASH_NIX_PROFILE=$HOME/.nix-profile/etc/profile.d/nix.sh
 if [ -e "${BASH_NIX_PROFILE}" ]; then
   source "${BASH_NIX_PROFILE}";
 fi
+
+function nix-ask() {
+  local prompt="$1"
+  local answer
+
+  echo "$prompt"
+  echo "Please enter 'y' for yes or 'n' for no."
+  read -p "> " answer
+
+  if [[ "$answer" == "y" || "$answer" == "Y" ]]; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+function nix-uninstall() {
+  local other_files="$HOME/.cache/nix $HOME/.local/state/nix"
+  local files="$other_files /nix $HOME/.nix-channels $HOME/.nix-defexpr $HOME/.nix-profile"
+  local verbose=0
+
+  if [[ "$1" == "--verbose" ]]; then
+    verbose=1
+  fi
+
+  if ! nix-ask "Are you sure you want to uninstall nix?"; then
+    return 0
+  fi
+
+  if [[ $verbose -eq 1 ]]; then
+    echo "Running: rm -rfv $files"
+    sudo rm -rfv $files
+  else
+    sudo rm -rf $files
+  fi
+}
+
