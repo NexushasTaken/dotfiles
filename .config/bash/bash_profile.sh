@@ -25,13 +25,6 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_DATA_DIRS=/usr/local/share:/usr/share
 export XDG_CONFIG_DIRS=/etc/xdg
 
-# QT
-export QT_QPA_PLATFORMTHEME=kvantum
-
-export XCURSOR_SIZE=16
-export HYPRCURSOR_SIZE=16
-export GDK_DPI_SCALE=0.8
-
 function add_path() {
   local dir="$1"
   [[ -d "$dir" ]] || return 0
