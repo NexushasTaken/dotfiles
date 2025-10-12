@@ -4,6 +4,7 @@ export BASH_CONFIG_PATH=$HOME/.config/bash
 export HISTCONTROL=ignoredups
 export HISTSIZE=-1
 export HISTFILESIZE=
+export HISTFILE="$HOME/.bash_history"
 
 export W3M_DIR=~/.config/w3m
 export ANDROID_HOME=~/.android
@@ -11,7 +12,7 @@ export JAVA_HOME="/usr/lib/jvm/default"
 export EDITOR=nvim
 export SUDO_EDITOR=$EDITOR
 export VISUAL=$EDITOR
-export PAGER=less
+export PAGER="bat --plain"
 
 export PKG_CONFIG_PATH="/usr/local/pkgconfig"
 PKG_CONFIG_PATH+=":/usr/local/lib/pkgconfig"
