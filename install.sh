@@ -133,7 +133,7 @@ stow-now() {
   for dir in systemd/user godot fontconfig; do
     mkdir -p "$HOME/.config/$dir"
   done
-  stow .
+  stow . --adopt
 }
 
 case $1 in
