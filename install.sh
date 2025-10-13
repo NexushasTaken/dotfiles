@@ -129,10 +129,20 @@ install() {
   fi
 }
 
+stow-now() {
+  for dir in systemd/user; do
+    mkdir -p "$HOME/.config/$dir"
+  done
+  stow .
+}
+
 case $1 in
   install)
     install
-    stow .
+    stow-now
+    ;;
+  stow)
+    stow-now
     ;;
   clone)
     git-clone
