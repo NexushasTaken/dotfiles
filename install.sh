@@ -130,7 +130,7 @@ install() {
 }
 
 stow-now() {
-  for dir in systemd/user godot; do
+  for dir in systemd/user godot fontconfig; do
     mkdir -p "$HOME/.config/$dir"
   done
   stow .
