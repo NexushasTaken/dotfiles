@@ -27,16 +27,24 @@ export XDG_CONFIG_DIRS=/etc/xdg
 
 function add_path() {
   local dir="$1"
+  local action="${2:-append}"
+
   [[ -d "$dir" ]] || return 0
   case ":$PATH:" in
     *":$dir:"*)
       ;;  # already in PATH
     *)
-      if [[ ! -d $dir ]]; then
+      if [[ ! -d "$dir" ]]; then
         echo "$dir not found or isn't directory"
         return 0
       fi
-      export PATH="$dir:$PATH"
+      if [[ "$action" = "prepend" ]]; then
+        export PATH="$dir:$PATH"
+      elif [[ "$action" = "append" ]]; then
+        export PATH="$PATH:$dir"
+      else
+        printf "add_path: invalid '$action'"
+      fi
       ;;
   esac
 }
@@ -52,6 +60,7 @@ add_path "$HOME/.local/bin"
 add_path "$HOME/.nimble/bin"
 add_path "$HOME/.local/state/gem/ruby/3.0.0/bin"
 add_path "$HOME/.dvm/bin/"
+add_path "$HOME/dev/deps/flutter/bin"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
