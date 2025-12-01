@@ -1,23 +1,23 @@
 AntialiasSelectionOutline=false
-ArtColorSel.ColorSpace=1
+ArtColorSel.ColorSpace=0
 ArtColorSel.InversedSaturation=false
-ArtColorSel.Light=0.00392156862745098
-ArtColorSel.LightPieces=9
+ArtColorSel.Light=0
+ArtColorSel.LightPieces=11
 ArtColorSel.NumRings=7
-ArtColorSel.RingPieces=10
-ArtColorSel.SelColorH=-1
+ArtColorSel.RingPieces=12
+ArtColorSel.SelColorH=0
 ArtColorSel.SelColorS=0
-ArtColorSel.SelColorX=0.00392156862745098
-ArtColorSel.defaultHueSteps=10
+ArtColorSel.SelColorX=0
+ArtColorSel.defaultHueSteps=12
 ArtColorSel.defaultSaturationSteps=7
-ArtColorSel.defaultValueScaleSteps=9
+ArtColorSel.defaultValueScaleSteps=11
 ArtColorSel.enforceGamutMask=false
 ArtColorSel.lumaB=0.0722
 ArtColorSel.lumaG=0.7152
 ArtColorSel.lumaGamma=2.2
 ArtColorSel.lumaR=0.2126
 ArtColorSel.showBgColor=true
-ArtColorSel.showValueScale=true
+ArtColorSel.showValueScale=false
 AutoSaveInterval=420
 BackgroundColorForNewImage=255,255,255
 BackgroundOpacityForNewImage=255
@@ -26,13 +26,12 @@ CanvasOnlyActive=false
 ColorManagement/UseSystemMonitorProfile=false
 ConvertToImageColorSpaceOnImport=false
 CreateBackupFile=true
-CurrentWorkspace=MyDefault
 GamutMasks.viewMode=0
 KineticScrollingEnabled=true
 KineticScrollingGesture=2
 KineticScrollingHideScrollbar=false
 KineticScrollingSensitivity=75
-KisDlgPreferences/CurrentPage=shortcuts
+KisDlgPreferences/CurrentPage=tablet
 Krita/Ocio/DisplayDevice=sRGB
 Krita/Ocio/DisplayLook=None
 Krita/Ocio/DisplayView=Raw
@@ -42,21 +41,19 @@ Krita/Ocio/OcioConfigPath=
 Krita/Ocio/OcioLockColorVisualRepresentation=false
 Krita/Ocio/OcioLutPath=
 Krita/Ocio/UseOcio=false
-LastBackGroundColor=<!DOCTYPE LastBackGroundColor>\n<LastBackGroundColor>\n <RGB r="1" b="1" space="sRGB-elle-V2-srgbtrc.icc" g="1"/>\n</LastBackGroundColor>\n
-LastEraser_0=a) Eraser Circle
-LastForeGroundColor=<!DOCTYPE LastForeGroundColor>\n<LastForeGroundColor>\n <RGB r="0.00392156885936856" b="0.00392156885936856" space="sRGB-elle-V2-srgbtrc.icc" g="0.00392156885936856"/>\n</LastForeGroundColor>\n
+LastBackGroundColor=<!DOCTYPE LastBackGroundColor>\n<LastBackGroundColor>\n <RGB g="0" r="0" b="0" space="sRGB-elle-V2-srgbtrc.icc"/>\n</LastBackGroundColor>\n
+LastForeGroundColor=<!DOCTYPE LastForeGroundColor>\n<LastForeGroundColor>\n <RGB g="0" r="0" b="0" space="sRGB-elle-V2-srgbtrc.icc"/>\n</LastForeGroundColor>\n
 LastPreset=b) Basic-5 Size
 LastPreset_-1=b) Basic-5 Size
-LineSmoothingDelayDistance=3
-LineSmoothingDistance=48.8
+LineSmoothingDelayDistance=50
+LineSmoothingDistance=50
 LineSmoothingFinishStabilizedCurve=true
 LineSmoothingScalableDistance=true
-LineSmoothingSmoothPressure=true
+LineSmoothingSmoothPressure=false
 LineSmoothingStabilizeSensors=true
-LineSmoothingTailAggressiveness=1
+LineSmoothingTailAggressiveness=0.15
 LineSmoothingType=1
 LineSmoothingUseDelayDistance=true
-MixerSliderColors=RGBA,U8,sRGB-elle-V2-srgbtrc.icc,0.3960784375667572,0.3960784375667572,0.3960784375667572,1.0|RGBA,U8,sRGB-elle-V2-srgbtrc.icc,0.3960784375667572,0.3960784375667572,0.3960784375667572,1.0
 NumberOfLayersForNewImage=2
 OpenGLFilterMode=3
 ResourceDirectory=/home/nexus/.local/share/krita
@@ -64,7 +61,7 @@ ShowEraserOutlineWhilePainting=true
 ShowOutlineWhilePainting=true
 ShowRootLayer=false
 SpecificColorSelector/HsxMode=0
-SpecificColorSelector/UseHsx=true
+SpecificColorSelector/UseHsx=false
 SpecificColorSelector/UsePercentage=false
 ToolOptionsInDocker=true
 TrimFramesImport=false
@@ -100,7 +97,7 @@ cumulativeUndoMaxGroupDuration=5000
 cumulativeUndoMaxGroupSeparation=1000
 cumulativeUndoMergeTimeout=5000
 currentInputProfile=Krita Default
-cursorMaincColor=0,0,0
+cursorMaincColor=128,255,128
 custom_font_size=-1
 custom_system_font=
 defaultPalette=Default
@@ -111,17 +108,13 @@ defaultProofingProfileDepth=U8
 defaultProofingProfileIntent=3
 defaultProofingProfileModel=CMYKA
 defaultProofingProfileName=Chemical proof
-disableTouchOnCanvas=false
 enableBrushSpeedLogging=false
 enableOpenGLFramerateLogging=false
 enablePerfLog=false
 enableProgressReporting=true
-eraserCursorMaincColor=0,0,0
+eraserCursorMaincColor=128,255,128
 eraserCursorStyle=9
 eraserOutlineStyle=2
-favoritePresetsTag=Ink
-filterdialog/geometry=\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01c\x00\x00\x01\x98\x00\x00\x03\x93\x00\x00\x03V\x00\x00\x01e\x00\x00\x01\xa8\x00\x00\x03\x91\x00\x00\x03T\x00\x00\x00\x00\x00\x00\x00\x00\x05\x00\x00\x00\x01e\x00\x00\x01\xa8\x00\x00\x03\x91\x00\x00\x03T
-filterdialog/rememberlastpreset=false
 forceAlwaysFullSizedEraserOutline=false
 forceAlwaysFullSizedOutline=false
 forcedDpiForQtFontBugWorkaround=-1
@@ -151,17 +144,15 @@ hideStatusbarFullScreen=true
 hideTitleBarFullscreen=true
 hideToolbarFullscreen=true
 ignoreHighFunctionKeys=true
-imageHeightDef=2480
+imageHeightDef=4961
 imageResolutionDef=600
-imageWidthDef=3508
-internal_selector_active_color_set=Animation Color Set
-internal_selector_active_color_set_md5=8e071366587a400f1db855c27014a5ec
+imageWidthDef=7016
 levelOfDetailEnabled=false
 logviewer_enabled=false
 maxAllowedSpeedValue=30
 maxSwapSize=4096
 maximumBrushSize=1000
-mdiBackgroundColorXML=<!DOCTYPE color>\n<color channeldepth="U16">\n <RGB r="0" space="sRGB-elle-V2-g10.icc" b="0" g="0"/>\n</color>\n
+mdiBackgroundColorXML=<!DOCTYPE color>\n<color channeldepth="U8">\n <RGB b="0.301960796117783" space="sRGB-elle-V2-srgbtrc.icc" g="0.301960796117783" r="0.301960796117783"/>\n</color>\n
 mdiBackgroundImage=
 mdi_rubberband=1
 mdi_viewmode=1
@@ -170,19 +161,16 @@ memoryPoolLimitPercent=0
 memorySoftLimitPercent=2
 monitorProfile=sRGB-elle-V2-srgbtrc.icc
 monitorProfile/OverrideX11=false
-monitorProfileSamsung Electric Company_SMB1740R-_HMBBC01882-=sRGB-elle-V2-srgbtrc.icc
-moveToolChangedValueX=1147
-moveToolChangedValueY=898
 moveToolUnit=0
-newCursorStyle=1
+newCursorStyle=2
 newOutlineStyle=2
 numFavoritePresets=10
 numberOfOnionSkins=10
 numberofbackupfiles=1
 oninSkinTintColorForward=0,255,0
-onionSkinOpacity_-1=173
+onionSkinOpacity_-1=175
 onionSkinOpacity_-10=22
-onionSkinOpacity_-2=163
+onionSkinOpacity_-2=165
 onionSkinOpacity_-3=147
 onionSkinOpacity_-4=130
 onionSkinOpacity_-5=107
@@ -191,9 +179,9 @@ onionSkinOpacity_-7=66
 onionSkinOpacity_-8=48
 onionSkinOpacity_-9=35
 onionSkinOpacity_0=178
-onionSkinOpacity_1=173
+onionSkinOpacity_1=175
 onionSkinOpacity_10=22
-onionSkinOpacity_2=163
+onionSkinOpacity_2=165
 onionSkinOpacity_3=147
 onionSkinOpacity_4=130
 onionSkinOpacity_5=107
@@ -234,8 +222,7 @@ popuppalette/showRotationTrack=true
 popuppalette/size=385
 popuppalette/useDynamicSlotCount=true
 popuppalette/usevisualcolorselector=false
-presetChooserViewMode=0
-presethistory=b) Basic-6 Details,c) Pencil-2,d) Ink-1 Precision,d) Ink-7 Brush Rough,d) Ink-3 Gpen,c) Pencil-1 Hard,c) Pencil-3 Large 4B,b) Basic-3 Flow,d) Ink-2 Fineliner,b) Basic-5 Size
+presethistory=b) Basic-1,b) Basic-2 Opacity,b) Basic-3 Flow,b) Basic-4 Flow Opacity,b) Basic-6 Details,c) Pencil 2b (mypaint),c) Pencil-1 Hard,c) Pencil 1 Sketch (mypaint),b) Basic-5 Size Opacity,b) Basic-5 Size
 renameMergedLayers=true
 renamePastedLayers=true
 renderIntent=0
@@ -244,16 +231,12 @@ scratchpadVisible=true
 scrollingcheckers=false
 selectionOutlineOpacity=1
 selectionOverlayMaskColor=255,0,0,128
-separateEraserCursor=true
+separateEraserCursor=false
 sessionOnStartup=1
 showAdditionalOnionSkinsSettings=true
-showBrushHud=true
-showDockers=true
-showFilterGallery=false
-showOnCanvasMessages=false
+showOnCanvasMessages=true
 showPaletteBottomBar=true
 showSingleChannelAsColor=false
-showrulers=false
 speedValueSmoothing=3
 swaplocation=/tmp
 switchSelectionCtrlAlt=false
@@ -262,6 +245,7 @@ toolbarslider_1=opacity
 toolbarslider_2=size
 toolbarslider_3=flow
 toolbarslider_4=flow
+touchPainting=0
 undoStackLimit=1000
 useAnimationCacheFrameSizeLimit=true
 useAnimationCacheRegionOfInterest=true
@@ -271,125 +255,40 @@ useCumulativeUndoRedo=false
 useDefaultColorSpace=false
 useOnDiskAnimationCacheSwapping=true
 useOpenGLTextureBuffer=true
-useRightMiddleTabletButtonWorkaround=false
+useRightMiddleTabletButtonWorkaround=true
 useSubtractiveBlendingForCmykColorSpaces=true
 useTimestampsForBrushSpeed=false
 use_custom_system_font=false
 zoomMarginSize=0
 zoomSteps=2
 
-[Author]
-active-profile=Nexus
-
 [File Dialogs]
 DontUseNativeFileDialog=true
-OpenDocument=/home/nexus/user/Pictures
-OpenReferenceImage=/home/nexus/user/Pictures/pixiv
-SaveAs=/home/nexus/Pictures
-krita_resources=/home/nexus/user/Downloads
 
 [GradientChooser]
 global/itemSize=medium
 global/itemSizeCustom=32
 global/viewMode=icon
 
-[KisAssistantTool]
-AssistantType=infinite ruler
-LimitAssistantToArea=false
-
 [KisResourceItemChooser_paintoppresets]
 splitterState_1row=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\xff\xff\xff\xff\xff\xff\xff\xff\x01\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
-splitterState_2row=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x03\x00\x00\x00\xea\x00\x00\x00"\xff\xff\xff\xff\x01\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
 
 [KisShortcutsDialog Settings]
-Dialog Size=810,468
-
-[KisToolCrop]
-allowGrow=true
-decoration=1
-growCenter=false
-
-[KisToolPath]
-outlineType=1
-patternTransformScale=100
-
-[KisToolPencil]
-outlineType=1
-patternTransformScale=100
-
-[KisToolPolygon]
-outlineType=1
-patternTransformScale=100
-
-[KisToolPolyline]
-outlineType=1
-patternTransformScale=100
-
-[KisToolSelectBase]
-selectionAction=0
-selectionMode=0
-
-[KisToolSelectContiguous]
-growSelection=-17
-opacitySpread=17
-
-[KisToolSelectElliptical]
-roundCornersX=0
-roundCornersY=0
-
-[KisToolSelectRectangular]
-antiAliasSelection=true
-featherSelection=0
-roundCornersX=0
-roundCornersY=0
+Dialog Size=701,547
 
 [KisToolTransform]
 forceLodMode=true
-transformAroundRotationCenter=1
-useOverlayPreviewStyle=true
-
-[KoToolBox]
-iconSize=12
-layoutDir=0
-
-[KritaShape/KisToolDyna]
-angleAmount=20
-dragAmount=0.98
-massAmount=0.01
-
-[KritaShape/KisToolEllipse]
-outlineType=1
-patternTransformScale=100
-roundCornersX=0
-roundCornersY=0
-
-[KritaShape/KisToolLine]
-useSensors=true
-
-[KritaShape/KisToolMultiBrush]
-axesAngle=0
-handsCount=1
-mirrorHorizontally=false
-mirrorVertically=false
-showAxes=false
-transformMode=0
-
-[KritaShape/KisToolRectangle]
-outlineType=1
-patternTransformScale=100
-roundCornersX=0
-roundCornersY=0
+useOverlayPreviewStyle=false
 
 [KritaTransform/KisToolMove]
-forceLodMode=true
+forceLodMode=false
 
 [MainWindow]
-1280x1024 screen: Height=992
-1280x1024 screen: Width=1280
-1280x1024 screen: Window-Maximized=true
-State=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rvsAAAASAEwAdQB0AEQAbwBjAGsAZQByAAAAAAD/////AAABIwD////7AAAAGgBQAGEAbABlAHQAdABlAEQAbwBjAGsAZQByAAAAAAD/////AAAAXwD////7AAAAFABHAHIAaQBkAEQAbwBjAGsAZQByAAAAAAD/////AAABKgD////7AAAAHgBIAGkAcwB0AG8AZwByAGEAbQBEAG8AYwBrAGUAcgAAAAAA/////wAAAEQA////+wAAACoAQQBuAGkAbQBhAHQAaQBvAG4AQwB1AHIAdgBlAHMARABvAGMAawBlAHIAAAAAAP////8AAABaAP////sAAAAyAFMAdgBnAFMAeQBtAGIAbwBsAEMAbwBsAGwAZQBjAHQAaQBvAG4ARABvAGMAawBlAHIAAAAAAP////8AAABlAP////sAAAAWAFQAbwB1AGMAaABEAG8AYwBrAGUAcgAAAAJMAAABMQAAABIA////+wAAABoAQQByAHIAYQBuAGcAZQBEAG8AYwBrAGUAcgAAAAAA/////wAAAC0A////+wAAADoAYwBvAG0AaQBjAHMAXwBwAHIAbwBqAGUAYwB0AF8AbQBhAG4AYQBnAGUAcgBfAGQAbwBjAGsAZQByAAAAAAD/////AAAAmAD////7AAAAKgBxAHUAaQBjAGsAXwBzAGUAdAB0AGkAbgBnAHMAXwBkAG8AYwBrAGUAcgAAAAAA/////wAAAGUA////+wAAABYAUABhAGcAZQByAEQAbwBjAGsAZQByAAAAAAD/////AAAAAAAAAAD7AAAAJgBsAGEAcwB0AGQAbwBjAHUAbQBlAG4AdABzAGQAbwBjAGsAZQByAAAAAAD/////AAAAYwD////7AAAAEgBHAGEAbQB1AHQATQBhAHMAawAAAAAA/////wAAAI8A////+wAAABAAUwBuAGEAcABzAGgAbwB0AAAAAt8AAACkAAAAYwD////7AAAAEgBMAG8AZwBEAG8AYwBrAGUAcgAAAAAA/////wAAAGQA////+wAAACAAUwB0AG8AcgB5AGIAbwBhAHIAZABEAG8AYwBrAGUAcgAAAAAA/////wAAAIgA////+wAAABwAUgBlAGMAbwByAGQAZQByAEQAbwBjAGsAZQByAAAAAAD/////AAAASAD////7AAAAHgBQAGgAbwB0AG8AYgBhAHMAaABEAG8AYwBrAGUAcgAAAAAA/////wAAAGgA////AAAAAgAACgAAAAC8/AEAAAAB+wAAABoAVABvAG8AbABCAGEAcgBEAG8AYwBrAGUAcgAAAAAA/////wAAAAAAAAAAAAAAAwAABQAAAAAW/AEAAAAF+wAAAA4AVABvAG8AbABCAG8AeAEAAAAAAAAFAAAAACMA////+wAAABwARgBsAGkAcABiAG8AbwBrAEQAbwBjAGsAZQByAAAAAAD/////AAAAAAAAAAD7AAAAHgBBAG4AaQBtAGEAdABpAG8AbgBEAG8AYwBrAGUAcgAAAAAA/////wAAAAAAAAAA+wAAACAATwBuAGkAbwBuAFMAawBpAG4AcwBEAG8AYwBrAGUAcgAAAAAA/////wAAAQwA////+wAAABwAVABpAG0AZQBsAGkAbgBlAEQAbwBjAGsAZQByAAAAAAD/////AAADFwD///8AAAP5AAADgwAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAADAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAAB4AQgByAHUAcwBoAGUAcwBBAG4AZABTAHQAdQBmAGYBAAAAYv////8AAAAAAAAAAAAAABYAZQBkAGkAdABUAG8AbwBsAEIAYQByAQAABCj/////AAAAAAAAAAA=
+1280x1024 screen: Height=1003
+1280x1024 screen: Width=1278
+State=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AAAAFABHAHIAaQBkAEQAbwBjAGsAZQByAAAAAAD/////AAABKwD////7AAAAHgBIAGkAcwB0AG8AZwByAGEAbQBEAG8AYwBrAGUAcgAAAAAA/////wAAAEUA////+wAAACoAQQBuAGkAbQBhAHQAaQBvAG4AQwB1AHIAdgBlAHMARABvAGMAawBlAHIAAAAAAP////8AAABoAP////sAAAAyAFMAdgBnAFMAeQBtAGIAbwBsAEMAbwBsAGwAZQBjAHQAaQBvAG4ARABvAGMAawBlAHIAAAAAAP////8AAAB4AP////sAAAAWAFQAbwB1AGMAaABEAG8AYwBrAGUAcgAAAAJMAAABMQAAABMA////+wAAABoAQQByAHIAYQBuAGcAZQBEAG8AYwBrAGUAcgAAAAAA/////wAAADYA////+wAAADoAYwBvAG0AaQBjAHMAXwBwAHIAbwBqAGUAYwB0AF8AbQBhAG4AYQBnAGUAcgBfAGQAbwBjAGsAZQByAAAAAAD/////AAAAAAAAAAD7AAAAKgBxAHUAaQBjAGsAXwBzAGUAdAB0AGkAbgBnAHMAXwBkAG8AYwBrAGUAcgAAAAAA/////wAAAAAAAAAA+wAAABYAUABhAGcAZQByAEQAbwBjAGsAZQByAAAAAAD/////AAAAAAAAAAD7AAAAJgBsAGEAcwB0AGQAbwBjAHUAbQBlAG4AdABzAGQAbwBjAGsAZQByAAAAAAD/////AAAAAAAAAAD7AAAAEgBHAGEAbQB1AHQATQBhAHMAawAAAAAA/////wAAAKkA////+wAAABAAUwBuAGEAcABzAGgAbwB0AAAAAt8AAACkAAAAdgD////7AAAAEgBMAG8AZwBEAG8AYwBrAGUAcgAAAAAA/////wAAAHgA////+wAAACAAUwB0AG8AcgB5AGIAbwBhAHIAZABEAG8AYwBrAGUAcgAAAAAA/////wAAAJoA////+wAAABwAUgBlAGMAbwByAGQAZQByAEQAbwBjAGsAZQByAAAAAAD/////AAAAVwD////7AAAALABXAGkAZABlAEcAYQBtAHUAdABDAG8AbABvAHIAUwBlAGwAZQBjAHQAbwByAAAAAAD/////AAAArgD///8AAAACAAAKAAAAALz8AQAAAAH7AAAAGgBUAG8AbwBsAEIAYQByAEQAbwBjAGsAZQByAAAAAAD/////AAAAAAAAAAAAAAADAAAAAAAAAAD8AQAAAAT7AAAAHABGAGwAaQBwAGIAbwBvAGsARABvAGMAawBlAHIAAAAAAP////8AAAAAAAAAAPsAAAAeAEEAbgBpAG0AYQB0AGkAbwBuAEQAbwBjAGsAZQByAAAAAAD/////AAAAAAAAAAD7AAAAIABPAG4AaQBvAG4AUwBrAGkAbgBzAEQAbwBjAGsAZQByAAAAAAD/////AAABNgD////7AAAAHABUAGkAbQBlAGwAaQBuAGUARABvAGMAawBlAHIAAAAAAP////8AAANpAP///wAAA6oAAAOPAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAMAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAHgBCAHIAdQBzAGgAZQBzAEEAbgBkAFMAdAB1AGYAZgEAAABm/////wAAAAAAAAAAAAAAFgBlAGQAaQB0AFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
 ToolBarsMovable=Disabled
-ko_geometry=AdnQywADAAAAAAAAAAAAEAAABP8AAAP/AAAAAAAAACAAAAT/AAAD/wAAAAACAAAABQAAAAAAAAAAEAAABP8AAAP/
+ko_geometry=AdnQywADAAAAAAABAAAAFAAABP4AAAP+AAAAAQAAABQAAAT+AAAD/gAAAAAAAAAABQAAAAABAAAAFAAABP4AAAP+
 
 [MainWindow][DockWidget AnimationCurvesDocker]
 DockArea=2
@@ -410,10 +309,10 @@ yPosition=0
 [MainWindow][DockWidget ArtisticColorSelector]
 DockArea=2
 Locked=false
-height=464
-width=640
+height=284
+width=334
 xPosition=0
-yPosition=16
+yPosition=0
 
 [MainWindow][DockWidget ChannelDocker]
 DockArea=2
@@ -426,10 +325,10 @@ yPosition=0
 [MainWindow][DockWidget ColorSelectorNg]
 DockArea=2
 Locked=false
-height=464
-width=640
+height=175
+width=262
 xPosition=0
-yPosition=16
+yPosition=17
 
 [MainWindow][DockWidget CompositionDocker]
 DockArea=2
@@ -466,26 +365,26 @@ yPosition=0
 [MainWindow][DockWidget HistogramDocker]
 DockArea=2
 Locked=false
-height=464
+height=463
 width=640
 xPosition=0
-yPosition=16
+yPosition=17
 
 [MainWindow][DockWidget History]
 DockArea=2
 Locked=false
-height=464
+height=463
 width=640
 xPosition=0
-yPosition=16
+yPosition=17
 
 [MainWindow][DockWidget KisLayerBox]
 DockArea=2
 Locked=false
-height=296
-width=258
+height=299
+width=262
 xPosition=0
-yPosition=16
+yPosition=17
 
 [MainWindow][DockWidget LogDocker]
 DockArea=2
@@ -514,10 +413,10 @@ yPosition=0
 [MainWindow][DockWidget OverviewDocker]
 DockArea=2
 Locked=false
-height=290
-width=258
+height=107
+width=100
 xPosition=0
-yPosition=16
+yPosition=0
 
 [MainWindow][DockWidget PaletteDocker]
 DockArea=2
@@ -530,26 +429,18 @@ yPosition=0
 [MainWindow][DockWidget PatternDocker]
 DockArea=2
 Locked=false
-height=198
-width=119
+height=243
+width=145
 xPosition=0
 yPosition=0
-
-[MainWindow][DockWidget PhotobashDocker]
-DockArea=2
-Locked=false
-height=464
-width=640
-xPosition=0
-yPosition=16
 
 [MainWindow][DockWidget PresetDocker]
 DockArea=2
 Locked=false
-height=209
-width=258
+height=345
+width=262
 xPosition=0
-yPosition=16
+yPosition=17
 
 [MainWindow][DockWidget PresetHistory]
 DockArea=2
@@ -570,10 +461,10 @@ yPosition=0
 [MainWindow][DockWidget SmallColorSelector]
 DockArea=2
 Locked=false
-height=464
+height=463
 width=640
 xPosition=0
-yPosition=16
+yPosition=17
 
 [MainWindow][DockWidget Snapshot]
 DockArea=2
@@ -586,10 +477,10 @@ yPosition=0
 [MainWindow][DockWidget SpecificColorSelector]
 DockArea=2
 Locked=false
-height=464
-width=640
+height=207
+width=268
 xPosition=0
-yPosition=16
+yPosition=0
 
 [MainWindow][DockWidget StoryboardDocker]
 DockArea=2
@@ -602,10 +493,10 @@ yPosition=0
 [MainWindow][DockWidget SvgSymbolCollectionDocker]
 DockArea=2
 Locked=false
-height=464
+height=463
 width=640
 xPosition=0
-yPosition=16
+yPosition=17
 
 [MainWindow][DockWidget TasksetDocker]
 DockArea=2
@@ -624,12 +515,12 @@ xPosition=0
 yPosition=0
 
 [MainWindow][DockWidget ToolBox]
-DockArea=8
+DockArea=1
 Locked=false
-height=22
-width=1267
-xPosition=13
-yPosition=0
+height=892
+width=66
+xPosition=0
+yPosition=19
 
 [MainWindow][DockWidget TouchDocker]
 DockArea=2
@@ -647,53 +538,16 @@ width=640
 xPosition=0
 yPosition=0
 
-[MainWindow][DockWidget comics_project_manager_docker]
-DockArea=2
-Locked=false
-height=464
-width=640
-xPosition=0
-yPosition=16
-
-[MainWindow][DockWidget lastdocumentsdocker]
-DockArea=2
-Locked=false
-height=464
-width=640
-xPosition=0
-yPosition=16
-
-[MainWindow][DockWidget mixer_slider_docker]
-DockArea=2
-Locked=false
-height=464
-width=640
-xPosition=0
-yPosition=16
-
-[MainWindow][DockWidget quick_settings_docker]
-DockArea=2
-Locked=false
-height=464
-width=640
-xPosition=0
-yPosition=16
-
 [MainWindow][DockWidget sharedtooldocker]
 DockArea=2
 Locked=false
-height=464
+height=463
 width=640
 xPosition=0
-yPosition=16
+yPosition=17
 
 [OverviewDocker]
 pinControls=true
-
-[RecentFiles]
-File1[$e]=$HOME/Pictures/unwraping.kra
-Name1=unwraping.kra
-maxRecentFileItems=100
 
 [SelectedTags]
 brushes=All
@@ -706,35 +560,24 @@ tasksets=All
 windowlayouts=All
 workspaces=All
 
-[Shortcut Schemes]
-Current Scheme=Default
-
 [SvgSymbolCollection]
 currentCollection=0
 
-[TemplateChooserDialog]
-LastReturnType=Custom Document
-
 [advancedColorSelector]
-commonColorsAlignment=false
-customColorSpaceModel=CMYKA
-customColorSpaceProfile=Chemical proof
 customSelectorBackgroundColor=160,160,164
 gamma=2.2
-lastUsedColorsAlignment=true
+hsxSettingType=0
 lumaG=0.7152
 lumaR=0.2126
 minimalShadeSelectorLineConfig=0|0.2|0|0|0|0|0;1|0|1|1|0|0|0;2|0|-1|1|0|0|0
 showColorSelector=true
 useCustomColorForBackground=false
-useCustomColorSpace=false
 
 [crashprevention]
 CreatingCanvas=false
 
 [filterdialog]
 forceLodMode=true
-showPreview=true
 
 [krita]
 ColorSpaceExtensionsPlugins=\\0
@@ -750,13 +593,5 @@ ShapePluginsDisabled=
 ToolPlugins=,,,,,,,,,,,,,
 ToolPluginsDisabled=
 
-[python]
-enable_mixer_slider_docker=true
-enable_photobash_images=true
-enable_subwindowOrganizer=true
-
 [theme]
 Theme=Krita darker
-
-[tool_color_sampler]
-ColorSamplerDefaultActivation=<!DOCTYPE params>\n<params>\n <param name="addPalette" type="internal">false</param>\n <param name="blend" type="internal">100</param>\n <param name="normaliseValues" type="internal">false</param>\n <param name="radius" type="internal">1</param>\n <param name="sampleMerged" type="internal">true</param>\n <param name="toForegroundColor" type="internal">true</param>\n <param name="updateColor" type="internal">true</param>\n</params>\n
