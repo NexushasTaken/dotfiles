@@ -13,6 +13,9 @@ GIT_PS1_DESCRIBE_STYLE='branch'
 PS1_DISABLE_GIT=''
 PS1_DIR_PARSE='1'
 PS1_DIR_SHORTEN=''
+PS1_HOST='1'
+PS1_NAME='1'
+PS1_HOSTNAME='1'
 
 function __ps1_to_ansi() {
   printf '\001\e[%sm\002' $1
@@ -54,6 +57,20 @@ function __print_variable() {
 }
 
 function __ps1_help() {
+  echo "$(__ps1_ansi cyan)Usage:$(__ps1_ansi reset) ps1 [OPTIONS]"
+  echo "$(__ps1_ansi cyan)Flags:$(__ps1_ansi reset)"
+  echo "  +<short>          enable boolean variable"
+  echo "  -<short>          disable boolean variable"
+  echo "  =<short> <value>  set variable to value"
+  echo "  ^<short>          toggle boolean variable"
+  echo "  --help            show this help"
+  echo "$(__ps1_ansi cyan)Symbols:$(__ps1_ansi reset)"
+  echo "  ^ boolean negation"
+  echo "  - set to false"
+  echo "  + set to true"
+  echo "  = set a value"
+  echo
+  echo "Available variables:"
   # $1 = Variable name
   # $2 = Variable value
   # $3 = Variable flag
@@ -81,10 +98,9 @@ function __ps1_help() {
   __print_variable "PS1_DISABLE_GIT" "$PS1_DISABLE_GIT" 'dg' 'bool'
   __print_variable "PS1_DIR_PARSE" "$PS1_DIR_PARSE" 'dn' 'bool'
   __print_variable "PS1_DIR_SHORTEN" "$PS1_DIR_SHORTEN" 'ds' 'bool'
-  echo "^ boolean negation"
-  echo "- set to false"
-  echo "+ set to true"
-  echo "= set a value"
+  __print_variable "PS1_HOST" "$PS1_HOST" 'h' 'bool'
+  __print_variable "PS1_NAME" "$PS1_NAME" 'n' 'bool'
+  __print_variable "PS1_HOSTNAME" "$PS1_HOSTNAME" 'hn' 'bool'
 }
 
 function __ps1_abbr2name() {
@@ -99,11 +115,14 @@ function __ps1_abbr2name() {
     (dg) printf 'PS1_DISABLE_GIT';;
     (dp) printf 'PS1_DIR_PARSE';;
     (ds) printf 'PS1_DIR_SHORTEN';;
+    (h) printf 'PS1_HOST';;
+    (n) printf 'PS1_NAME';;
+    (hn) printf 'PS1_HOSTNAME';;
   esac
 }
 
 function ps1() {
-  [[ $1 = '-h' ]] && __ps1_help && return
+  [[ $1 = '--help' ]] && __ps1_help && return
   while [[ $# -gt 0 ]]; do
     case ${1::1} in
       (-|+|=|^)
@@ -173,6 +192,41 @@ function __ps1() {
   separator="$(__ps1_ansi blue)$separator$(__ps1_ansi reset)"
   # }
 
+  # host: Hostname {
+  local host=''
+  local hostname=''
+  local name=''
+
+  if [[ -n "$PS1_HOST" ]]; then
+    if [[ -n $PS1_HOSTNAME || -n $PS1_NAME ]]; then
+      if [[ -n "$PS1_HOSTNAME" ]]; then
+        hostname="$(cat /etc/hostname)"
+        hostname="$(__ps1_ansi blue)$hostname$(__ps1_ansi reset)"
+      fi
+
+      if [[ -n "$PS1_NAME" ]]; then
+        name="$(whoami)"
+        name="$(__ps1_ansi green)$name$(__ps1_ansi reset)"
+      fi
+
+      local host=''
+      if [[ -n "$PS1_NAME" ]]; then
+        host+="$name"
+      fi
+      if [[ -n "$PS1_HOSTNAME" ]]; then
+        [[ -n "$PS1_NAME" ]] && host+='@'
+        host+="$hostname"
+      fi
+
+      if [[ -z "$gas_raw" ]]; then
+        host="($host) "
+      else
+        host="$host:"
+      fi
+    fi
+  fi
+  # }
+
   # dir: Directory (sep|raw) {
   local dir=${PWD#$HOME}
   [[ $dir != $PWD ]] && dir="~$dir"
@@ -190,6 +244,6 @@ function __ps1() {
     fi
   fi
   # }
-  printf "$bash_status$gas$separator$dir\n\$ "
+  printf "$host$bash_status$gas$separator$dir\n\$ "
 }
 PS1='$(__ps1)'
